@@ -1,21 +1,25 @@
-import React, { useContext } from "react";
-import { ScreenSize, MediaValueObj } from '../../Utils/Dep_ScreenSize';
-import './LeftHeadingText.scss';
+import styled from 'styled-components';
 
-export default function LeftHeadingText(props) {
+const HeroWrapper = styled.div`
+    display: flex;
+    width: 100%;
+    height: auto; 
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin-bottom: 20px;
+`;
 
-    let localScreenSize: MediaValueObj = useContext(ScreenSize);
+const HeroImage = styled.img`
+    width: 100%;
+    height: auto;
+`;
 
-    let localScreenSizeClass = localScreenSize.isTabletOrMobile ? 'mobile' : 'desktop';
-
+const HeroPanel = () => {
     return (
-        <div id='outerContainer' className={localScreenSizeClass}>
-            <div id='heading-box' className={localScreenSizeClass}>
-                <h3>{props.heading}</h3>
-            </div>
-            <div id='para-box' className={localScreenSizeClass}>
-                <p>{props.text}</p>
-            </div>
-        </div>
-    )
+        <HeroWrapper>
+            <HeroImage src="/TLB_logo.webp" />
+        </HeroWrapper>
+    );
 };
+
+export default HeroPanel;

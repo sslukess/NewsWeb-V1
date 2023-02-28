@@ -19,7 +19,7 @@ const Main = styled.main`
     color: ${({ theme }) => theme.text.colors.primary};
 `;
 
-const App = ({ children, }: { children: React.ReactNode; }) => {
+const App = ({Component, pageProps}) => {
 
     return (
         <ThemeProvider theme={theme}>
@@ -27,7 +27,7 @@ const App = ({ children, }: { children: React.ReactNode; }) => {
                 <Main>
                     <SiteNavBar />
                         <section>
-                            {children}
+                            <Component {...pageProps} />
                         </section>
                     <SiteFooter />
                 </Main>
