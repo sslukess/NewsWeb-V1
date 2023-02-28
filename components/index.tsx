@@ -4,7 +4,7 @@ import SiteFooter from './Navigation/SiteFooter';
 
 // Widgets
 import HeroPanel from './Widgets/HeroPanel'; 
-import HomePageWelcome from './Widgets/HomePageWelcome';
+import TextAndImage from './Widgets/TextAndImage';
 
 //..
 
@@ -16,5 +16,5 @@ export {
     SiteFooter,
     // Widgets
     HeroPanel,
-    HomePageWelcome,
+    TextAndImage,
 };
