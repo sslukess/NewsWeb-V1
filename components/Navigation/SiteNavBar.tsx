@@ -3,6 +3,18 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import styled from 'styled-components';
+import Image from 'next/image';
+
+// get the image from the public folder
+import TLB_logo from '../../public/logo.png';
+
+
+// === STYLES ===
+
+// Rounded Image 
+const RoundedImage = styled(Image)`
+    border-radius: 50%;
+`;
 
 // styled Navbar
 const StyledNavbar = styled(Navbar)`
@@ -28,7 +40,7 @@ function SiteNavBar() {
     return (
         <StyledNavbar expand="lg">
             <Container>
-                <Navbar.Brand href="#home">TLB V1</Navbar.Brand>
+                <Navbar.Brand href="#home"><RoundedImage height={80} src={TLB_logo} alt="thelogo"/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
                     <StyledNav>

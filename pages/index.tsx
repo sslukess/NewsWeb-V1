@@ -8,13 +8,13 @@ import Col from 'react-bootstrap/Col';
 function HomePage() {
   return (
 
-      <Container>
+      <Container fluid>
         <Row>
-          <Col>
+          <Col md={true}>
             <HomePageWelcome welcomeMessageCopy={<p>Hi, I'm the welcome message copy</p>}/>
           </Col>
 
-          <Col>
+          <Col md={true}>
             <h1>Home Page</h1>
           </Col>
           </Row>

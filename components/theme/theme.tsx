@@ -1,6 +1,6 @@
 const theme = {
     colors: {
-        primary: 'blanchedalmond',
+        primary: 'gold',
     },
     text: {
         colors: {
