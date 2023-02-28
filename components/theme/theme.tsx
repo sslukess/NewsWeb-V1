@@ -6,6 +6,7 @@ const theme = {
     text: {
         colors: {
             primary: 'black',
+            light: '#ededed',
         },
     },
 };

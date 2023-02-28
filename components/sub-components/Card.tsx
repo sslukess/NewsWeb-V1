@@ -11,15 +11,16 @@ const ImageWrapper = styled.div`
     overflow: hidden;
 `;
 
+const StyledCardImage = styled(Card.Img)`
+    width: auto;
+    height: 100%;
+    border-radius: 0px;
+    padding: 10px 0;
+`;
+
 const StyledCard = styled(Card)`
 max-width: 90%;
 margin: 10px auto;
-`;
-
-const StyledCardImage = styled(Card.Img)`
-    width: auto;
-    border-radius: 0px;
-    padding: 10px 0;
 `;
 
 function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy }) {
