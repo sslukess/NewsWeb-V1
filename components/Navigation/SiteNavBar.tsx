@@ -9,17 +9,32 @@ const StyledNavbar = styled(Navbar)`
     background-color: ${({ theme }) => theme.colors.primary};
 `;
 
-function Navbar() {
+const StyledNav = styled(Nav)`
+
+
+`;
+
+const StyledNavLink = styled(Nav.Link)`
+    color: ${({ theme }) => theme.text.colors.primary};
+`;
+
+const StyledNavDropdown = styled(NavDropdown)`
+    a {
+        color: ${({ theme }) => theme.text.colors.primary};
+    }
+`;
+
+function SiteNavBar() {
     return (
         <StyledNavbar expand="lg">
             <Container>
                 <Navbar.Brand href="#home">TLB V1</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
-                    <Nav>
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="#link">Latest News</Nav.Link>
-                        <NavDropdown title="Catagories" id="basic-nav-dropdown">
+                    <StyledNav>
+                        <StyledNavLink href="/">Home</StyledNavLink>
+                        <StyledNavLink href="#link">Latest News</StyledNavLink>
+                        <StyledNavDropdown title="Catagories" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">
                                 Community
                             </NavDropdown.Item>
@@ -33,12 +48,12 @@ function Navbar() {
                             <NavDropdown.Item href="#action/3.4">
                                 Print Versions
                             </NavDropdown.Item>
-                        </NavDropdown>
-                    </Nav>
+                        </StyledNavDropdown>
+                    </StyledNav>
                 </Navbar.Collapse>
             </Container>
         </StyledNavbar>
     );
 }
 
-export default Navbar;
+export default SiteNavBar;

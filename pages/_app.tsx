@@ -1,6 +1,7 @@
 // styled components theme provider
 import { ThemeProvider } from 'styled-components'
 import theme from '../components/theme/theme'
+import styled from 'styled-components';
 
 // Bootstrap things
 import SSRProvider from 'react-bootstrap/SSRProvider';
@@ -10,8 +11,13 @@ import '../CSS/reset.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // importing components
-import { NavHeader, BasicExample } from '../components/index'
+import { SiteNavBar } from '../components/index'
 
+// === End Imports ===
+
+const Main = styled.main`
+    color: ${({ theme }) => theme.text.colors.primary};
+`;
 
 const App = ({ children, }: { children: React.ReactNode; }) => {
 
@@ -19,8 +25,10 @@ const App = ({ children, }: { children: React.ReactNode; }) => {
         <>
             <ThemeProvider theme={theme}>
                 <SSRProvider>
-                    <BasicExample />
-                    <section>{children}</section>
+                    <Main>
+                        <SiteNavBar />
+                        <section>{children}</section>
+                    </Main>
                 </SSRProvider>
             </ThemeProvider>
         </>
