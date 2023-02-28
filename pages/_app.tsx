@@ -10,6 +10,11 @@ import SSRProvider from 'react-bootstrap/SSRProvider';
 import '../CSS/reset.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Font
+import { Roboto_Slab } from 'next/font/google';
+const robotoSlab = Roboto_Slab({ subsets: ["latin"], 
+weight: "400" })
+
 // importing components
 import { SiteNavBar, SiteFooter } from '../components/index'
 
@@ -24,7 +29,7 @@ const App = ({Component, pageProps}) => {
     return (
         <ThemeProvider theme={theme}>
             <SSRProvider>
-                <Main>
+                <Main className={robotoSlab.className}>
                     <SiteNavBar />
                         <section>
                             <Component {...pageProps} />

@@ -8,10 +8,10 @@ function HomePage() {
 
     // Hero Content
     <HeroPanel
-      imgSrc={'/creek.jpg'}
-      headingCopy={'I am a heading'} 
-      paragraphCopy={'Paragraph copy goes here'}
-      buttonCopy={'Click me!'}
+      imgSrc={'/hero-wallpaper.jpg'}
+      headingCopy={'Local News, Local First'} 
+      paragraphCopy={'The Local Bulletin is the premier source for local news in the Western Suburbs of Brisbane.'}
+      buttonCopy={'Latest Stories'}
     />
 
   )

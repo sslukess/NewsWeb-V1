@@ -4,6 +4,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
+import { breakpoint, breakpointSizes } from '../../utils/style-mix-ins/breakpoints';
+
 
 const HeroWrapper = styled.div`
     display: flex;
@@ -14,7 +16,7 @@ const HeroWrapper = styled.div`
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 20px;
+    padding: 40px 60px;
     margin-bottom: 20px;
 `;
 
@@ -23,9 +25,22 @@ const IntroBlock = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    border-radius: 2px;
     padding: 20px;
     background-color: ${({ theme }) => theme.colors.primary};
+
+
+    ${breakpoint.up(breakpointSizes.md)` {
+        width: 80%;
+        `}
 `;
+
+const IntroBlockWrapper = styled.div`
+${breakpoint.up(breakpointSizes.md)` {
+    display: flex;
+    justify-content: end;
+    `}
+    `;
 
 // === Compoenents ===
 
@@ -54,11 +69,14 @@ const HeroPanel = ({ imgSrc, headingCopy, paragraphCopy, buttonCopy }) => {
             <Container
                 fluid >
                 <Row>
-                    <Col md={4}>
-                        <IntroBlock>
-                            <Heading copy={headingCopy}/>
-                           <div> <Paragraph copy={paragraphCopy} /> <HeroButton copy={buttonCopy}/></div>
-                        </IntroBlock>
+                    <Col md={6}>
+                        <IntroBlockWrapper>
+                            <IntroBlock>
+                                <Heading copy={headingCopy} />
+                                <div> <Paragraph copy={paragraphCopy} /> <HeroButton copy={buttonCopy} /></div>
+                            </IntroBlock>
+                        </IntroBlockWrapper>
+
                     </Col>
                     <Col md>&nbsp;</Col>
                 </Row>
