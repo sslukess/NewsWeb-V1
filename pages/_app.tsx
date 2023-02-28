@@ -39,7 +39,6 @@ const App = ({Component, pageProps}) => {
             </SSRProvider>
         </ThemeProvider>
     );
-
 }
 
 export default App;

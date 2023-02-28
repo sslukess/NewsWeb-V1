@@ -1,18 +1,27 @@
 
-import { HeroPanel } from '../components/index';
+import { HeroPanel, FrontPgLeadStories } from '../components/index';
+import { dummyStories } from '../components/Widgets/FrontPageLeadStories';
 
 
 function HomePage() {
   return (
+    <>
 
-
-    // Hero Content
     <HeroPanel
       imgSrc={'/hero-wallpaper.jpg'}
       headingCopy={'Local News, Local First'} 
       paragraphCopy={'The Local Bulletin is the premier source for local news in the Western Suburbs of Brisbane.'}
       buttonCopy={'Latest Stories'}
     />
+
+
+    <FrontPgLeadStories
+      story1={dummyStories.story1}
+      story2={dummyStories.story2}
+      story3={dummyStories.story3}
+    />
+
+</>
 
   )
 }
