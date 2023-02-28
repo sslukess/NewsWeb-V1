@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import Image from 'next/image'
+
 
 const HeroWrapper = styled.div`
     display: flex;
@@ -9,15 +11,15 @@ const HeroWrapper = styled.div`
     margin-bottom: 20px;
 `;
 
-const HeroImage = styled.img`
+const HeroImage = styled(Image)`
     width: 100%;
     height: auto;
 `;
 
-const HeroPanel = () => {
+const HeroPanel = ({imgSrc}) => {
     return (
         <HeroWrapper>
-            <HeroImage src="/TLB_logo.webp" />
+            <HeroImage src={imgSrc} alt="The main logo"/>
         </HeroWrapper>
     );
 };

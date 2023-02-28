@@ -4,6 +4,7 @@ import SiteFooter from './Navigation/SiteFooter';
 
 // Widgets
 import HeroPanel from './Widgets/HeroPanel'; 
+import HomePageWelcome from './Widgets/HomePageWelcome';
 
 //..
 
@@ -15,4 +16,5 @@ export {
     SiteFooter,
     // Widgets
     HeroPanel,
+    HomePageWelcome,
 };
