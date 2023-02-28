@@ -2,10 +2,15 @@
 import { ThemeProvider } from 'styled-components'
 import theme from '../components/theme/theme'
 
+// Bootstrap things
+import SSRProvider from 'react-bootstrap/SSRProvider';
+
+//CSS Imports
 import '../CSS/reset.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // importing components
-import { NavHeader } from '../components/index'
+import { NavHeader, BasicExample } from '../components/index'
 
 
 const App = ({ children, }: { children: React.ReactNode; }) => {
@@ -13,8 +18,10 @@ const App = ({ children, }: { children: React.ReactNode; }) => {
     return (
         <>
             <ThemeProvider theme={theme}>
-                <NavHeader />
-                <section>{children}</section>
+                <SSRProvider>
+                    <BasicExample />
+                    <section>{children}</section>
+                </SSRProvider>
             </ThemeProvider>
         </>
 

@@ -1,7 +1,7 @@
 // Navigation
-import NavHeader from './Navigation/SiteHeader'
+import Navbar from './Navigation/SiteHeader';
 
 
 export {
-    NavHeader,
+    Navbar
 }
