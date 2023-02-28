@@ -1,5 +1,6 @@
 // Navigation
 import SiteNavBar from './Navigation/SiteNavBar';
+import SiteFooter from './Navigation/SiteFooter';
 
 //.. 
 
@@ -8,5 +9,6 @@ import SiteNavBar from './Navigation/SiteNavBar';
 
 // Export 
 export {
-    SiteNavBar
+    SiteNavBar,
+    SiteFooter,
 };

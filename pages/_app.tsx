@@ -11,7 +11,7 @@ import '../CSS/reset.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // importing components
-import { SiteNavBar } from '../components/index'
+import { SiteNavBar, SiteFooter } from '../components/index'
 
 // === End Imports ===
 
@@ -22,18 +22,17 @@ const Main = styled.main`
 const App = ({ children, }: { children: React.ReactNode; }) => {
 
     return (
-        <>
-            <ThemeProvider theme={theme}>
-                <SSRProvider>
-                    <Main>
-                        <SiteNavBar />
-                        <section>{children}</section>
-                    </Main>
-                </SSRProvider>
-            </ThemeProvider>
-        </>
-
-
+        <ThemeProvider theme={theme}>
+            <SSRProvider>
+                <Main>
+                    <SiteNavBar />
+                        <section>
+                            {children}
+                        </section>
+                    <SiteFooter />
+                </Main>
+            </SSRProvider>
+        </ThemeProvider>
     );
 
 }
