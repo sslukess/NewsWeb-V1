@@ -1,6 +1,6 @@
 
 import { HeroPanel, FrontPgLeadStories } from '../components/index';
-import { dummyStories } from '../components/Widgets/FrontPageLeadStories';
+import { dummyStories } from '../components/widgets/FrontPageLeadStories';
 
 
 function HomePage() {

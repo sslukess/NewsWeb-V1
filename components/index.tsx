@@ -1,11 +1,11 @@
 // Navigation
-import SiteNavBar from './Navigation/SiteNavBar';
-import SiteFooter from './Navigation/SiteFooter';
+import SiteNavBar from './navigation/SiteNavBar';
+import SiteFooter from './navigation/SiteFooter';
 
 // Widgets
-import HeroPanel from './Widgets/HeroPanel'; 
-import TextAndImage from './Widgets/TextAndImage';
-import FrontPgLeadStories from './Widgets/FrontPageLeadStories';
+import HeroPanel from './widgets/HeroPanel'; 
+import TextAndImage from './widgets/TextAndImage';
+import FrontPgLeadStories from './widgets/FrontPageLeadStories';
 
 //..
 
