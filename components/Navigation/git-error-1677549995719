@@ -1,0 +1,5 @@
+> git add -A -- /workspaces/TLB-V1/components/Navigation/SiteHeader.tsx /workspaces/TLB-V1/next-env.d.ts /workspaces/TLB-V1/next.config.js /workspaces/TLB-V1/pages/_app.tsx /workspaces/TLB-V1/pages/index.tsx /workspaces/TLB-V1/CSS/reset.css /workspaces/TLB-V1/components/theme/theme.tsx /workspaces/TLB-V1/pages/_document.tsx
+fatal: detected dubious ownership in repository at '/workspaces/TLB-V1'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /workspaces/TLB-V1
