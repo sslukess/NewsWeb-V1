@@ -57,7 +57,7 @@ function SiteNavBar() {
                                 Gardening
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
+                            <NavDropdown.Item href="https://thelocalbulletin.news">
                                 Print Versions
                             </NavDropdown.Item>
                         </StyledNavDropdown>
