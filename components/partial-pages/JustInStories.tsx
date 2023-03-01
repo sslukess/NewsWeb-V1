@@ -23,9 +23,6 @@ const JustInStoriesSection = (props) => {
     // Pull stories from props
     const { stories }: {stories: any[]} = props;
 
-    // Get router
-    const router = useRouter();
-
     return (
         <Container>
             <Row>
@@ -37,7 +34,7 @@ const JustInStoriesSection = (props) => {
                         cardTitle={story.storyTitle}
                         cardCopy={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'}
                         buttonCopy={"Read Story"}
-                        onClick={() => router.push(`/story/${story.slug}`)}
+                        link={`/story/${story.slug}`}
                     />
                     </Col>
                 ))}
@@ -45,18 +42,5 @@ const JustInStoriesSection = (props) => {
         </Container>
     );
 };
-
-// {/* <h2>{story.storyTitle}</h2>
-//                         {documentToReactComponents(story.storyText.json)}
-//                         <ImageWrapper>
-//                             <Image
-//                                 src={`${story.storyPhoto.url}`}
-//                                 alt={story.storyPhoto.title}
-//                                 width={100}
-//                                 height={100}
-//                             />
-//                         </ImageWrapper> */}
-
-
 
 export default JustInStoriesSection;

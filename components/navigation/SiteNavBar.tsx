@@ -46,7 +46,7 @@ function SiteNavBar() {
                 <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
                     <StyledNav>
                         <StyledNavLink href="/">Home</StyledNavLink>
-                        <StyledNavLink href="#link">Latest News</StyledNavLink>
+                        <StyledNavLink href="/just-in">Latest News</StyledNavLink>
                         <StyledNavDropdown title="Catagories" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">
                                 Community
