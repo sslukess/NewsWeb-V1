@@ -10,7 +10,8 @@ interface BasicCardProps {
   cardTitle: string;
   cardCopy: JSX.Element;
   buttonCopy: string;
-  onClick: () => void;  
+  onClick?: () => void;  
+  link?: string;
 }
 
 // === STYLES ===
@@ -36,7 +37,7 @@ max-width: 90%;
 margin: 10px auto;
 `;
 
-function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy, onClick }) {
+function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy, onClick, link }) {
   return (
     <StyledCard >
       <ImageWrapper>
@@ -47,7 +48,7 @@ function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy, onClick }) {
         <Card.Text>
           {cardCopy}
         </Card.Text>
-        <Button variant="primary" onClick={onClick}>{buttonCopy}</Button>
+        <Button variant="primary" onClick={onClick} href={link}>{buttonCopy}</Button>
       </Card.Body>
     </StyledCard>
   );
