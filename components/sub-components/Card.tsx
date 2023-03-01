@@ -1,6 +1,19 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
+
+// === Interfaces ===
+
+interface BasicCardProps {
+  imgSrc: string;
+  cardTitle: string;
+  cardCopy: JSX.Element;
+  buttonCopy: string;
+  onClick: () => void;  
+}
+
+// === STYLES ===
 
 const ImageWrapper = styled.div`
     display: flex;
@@ -23,7 +36,7 @@ max-width: 90%;
 margin: 10px auto;
 `;
 
-function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy }) {
+function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy, onClick }) {
   return (
     <StyledCard >
       <ImageWrapper>
@@ -34,7 +47,7 @@ function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy }) {
         <Card.Text>
           {cardCopy}
         </Card.Text>
-        <Button variant="primary">{buttonCopy}</Button>
+        <Button variant="primary" onClick={onClick}>{buttonCopy}</Button>
       </Card.Body>
     </StyledCard>
   );
