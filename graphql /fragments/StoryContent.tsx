@@ -8,4 +8,5 @@ export const FRAGMENT_STORY_CONTENT = `fragment StoryElements on storyCollection
       fileName
       url
     }
-  }`
+    slug
+`
