@@ -1,17 +1,31 @@
 import styled from 'styled-components';
+import getLatestStories from "../../graphql/query-functions/LatestStories";
 
-const JustInPage = () => {
-  return (
-    <div>
-      <h1>Just In</h1>
-    </div>
-  );
+// Components
+import JustInStoriesSection from '../../components/partial-pages/JustInStories';
+
+const JustInPage = ({stories}) => {
+    return (
+        <>
+
+            <div>
+                <h1>Just In</h1>
+            </div>
+
+            <JustInStoriesSection stories={stories}/>
+
+        </>
+    );
 };
 
-const getStaticProps = async () => {
-    const data = 'x'
-    
+export default JustInPage;
+
+// Server side render the page on request as the content is dynamic
+export const getServerSideProps = async () => {
+    const stories = await getLatestStories(3);
+
     return {
-        props: { data },
+        props: { stories },
     };
-    }
+}
+

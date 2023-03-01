@@ -1,4 +1,3 @@
-import { useQuery } from '@apollo/client';
 import { gql } from '@apollo/client';
 import apolloClient from '../Client';
 import { FRAGMENT_STORY_CONTENT } from '../fragments/StoryContent';
@@ -10,7 +9,7 @@ const getLatestStories = async (n) => {
         query LatestStories {
             storyCollection(limit: ${n}) {
                 ...StoryElements
-                }
+            }
         }
     `
 
