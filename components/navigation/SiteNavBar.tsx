@@ -41,7 +41,7 @@ function SiteNavBar() {
     return (
         <StyledNavbar expand="lg">
             <Container>
-                <Navbar.Brand href="#home"><RoundedImage height={80} src={TLB_logo} alt="thelogo"/></Navbar.Brand>
+                <Navbar.Brand href="/"><RoundedImage height={80} src={TLB_logo} alt="thelogo"/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
                     <StyledNav>

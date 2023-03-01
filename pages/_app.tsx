@@ -1,13 +1,13 @@
 // styled components theme provider
 import { ThemeProvider } from 'styled-components'
-import theme from '../components/theme/theme'
+import theme from '../styling/CSS/theme/theme'
 import styled from 'styled-components';
 
 // Bootstrap things
 import SSRProvider from 'react-bootstrap/SSRProvider';
 
 //CSS Imports
-import '../CSS/reset.css'
+import '../styling/CSS/reset.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Font
