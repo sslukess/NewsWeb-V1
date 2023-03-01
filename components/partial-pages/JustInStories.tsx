@@ -4,4 +4,4 @@ const JustInStoriesSection = () => {
 
     const stories = [];
 
-    
+}
