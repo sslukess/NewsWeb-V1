@@ -1,14 +1,12 @@
 import { gql } from '@apollo/client'
 import { FRAGMENT_STORY_CONTENT } from '../fragments/StoryContent'
 
-const ALL_STORIES_QUERY = gql`
+export const ALL_STORIES_QUERY = gql`
+
+    ${FRAGMENT_STORY_CONTENT}
     query AllStories {
         storyCollection {
-            items {
-                ${FRAGMENT_STORY_CONTENT}
-            }
+            ...StoryElements
         }
     }
 `
-
-export default ALL_STORIES_QUERY;

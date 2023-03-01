@@ -4,9 +4,9 @@ import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 const CONTENTFUL_ENDPOINT = process.env.CONTENTFUL_ENDPOINT
 
-const client = new ApolloClient({
+const apolloClient = new ApolloClient({
     uri: CONTENTFUL_ENDPOINT,
     cache: new InMemoryCache(),
 });
 
-export default client;
+export default apolloClient;
