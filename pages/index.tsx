@@ -12,6 +12,7 @@ function HomePage() {
       headingCopy={'Local News, Local First'} 
       paragraphCopy={'The Local Bulletin is the premier source for local news in the Western Suburbs of Brisbane.'}
       buttonCopy={'Latest Stories'}
+      buttonHref={'/just-in'}
     />
 
 
