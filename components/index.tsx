@@ -4,7 +4,7 @@ import SiteFooter from './navigation/SiteFooter';
 
 // Widgets
 import HeroPanel from './widgets/HeroPanel'; 
-import FrontPgLeadStories from './widgets/FrontPageLeadStories';
+import FrontPgLeadStories from './partial-pages/FrontPageLeadStories';
 
 //..
 

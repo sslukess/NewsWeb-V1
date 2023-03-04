@@ -29,7 +29,7 @@ function HomePage(props) {
     />
 
 
-    <FrontPgLeadStories latestStories={cleanedStories} />
+    <FrontPgLeadStories stories={cleanedStories} />
 
 </>
 
