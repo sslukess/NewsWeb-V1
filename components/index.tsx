@@ -1,6 +1,6 @@
 // Navigation
-import SiteNavBar from './navigationTemp/SiteNavBar';
-import SiteFooter from './navigationTemp/SiteFooter';
+import SiteNavBar from './navigation/SiteNavBar';
+import SiteFooter from './navigation/SiteFooter';
 
 // Widgets
 import HeroPanel from './widgets/HeroPanel'; 
