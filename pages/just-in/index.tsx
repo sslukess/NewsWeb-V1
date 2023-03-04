@@ -32,7 +32,7 @@ export default JustInPage;
 
 // Server side render the page on request as the content is dynamic
 export const getServerSideProps = async () => {
-    const stories: RawStory[] = await getLatestStories(3);
+    const stories: RawStory[] = await getLatestStories(10);
 
     return {
         props: { stories },
