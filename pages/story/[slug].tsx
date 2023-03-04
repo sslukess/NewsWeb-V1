@@ -45,12 +45,12 @@ const StoryPage = ({ story }) => {
     const StoryTextJSX = documentToReactComponents(storyText.json);
 
     // pull the image URL 
-    const storyPhotoURL = storyPhoto.url;
+    const storyPhotoURL = `${storyPhoto.url}?w=200`;
 
     return (
         <div>
             <h1>{storyTitle}</h1>
-            <img src={storyPhotoURL} />
+            <img src={storyPhotoURL}/>
             {StoryTextJSX}
         </div>
     )
