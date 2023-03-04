@@ -13,7 +13,6 @@ function HomePage(props) {
   // clean the stories data
   const cleanedStories: NormalisedStory[] = latestStories.map((item) => {
     const cleanStory = mapRawResponseToStoryObject(item);
-    cleanStory.storyPhoto.url = getPhotoWithSize(cleanStory, 200);
     return cleanStory;
 });
 

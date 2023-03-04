@@ -2,6 +2,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import styled from 'styled-components';
 
+import { getPhotoWithSize } from '../../../utils/story-utils/GetPhotoWithSize';
+
 // === Interfaces ===
 
 interface BasicCardProps {
@@ -37,10 +39,14 @@ margin: 10px auto;
 `;
 
 function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy, onClick, link }: BasicCardProps) {
+
+  // add sizing parameters to send to contentful: 
+  const resizedImgSrc = getPhotoWithSize(imgSrc, null, 180);
+
   return (
     <StyledCard >
       <ImageWrapper>
-        <StyledCardImage variant="top" src={imgSrc} />
+        <StyledCardImage variant="top" src={resizedImgSrc} />
       </ImageWrapper>
       <Card.Body>
         <Card.Title>{cardTitle}</Card.Title>

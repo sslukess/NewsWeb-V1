@@ -12,7 +12,6 @@ const JustInPage = ({stories}) => {
     // clean the stories data
     const cleanedStories: NormalisedStory[] = stories.map((item) => {
         const cleanStory = mapRawResponseToStoryObject(item);
-        cleanStory.storyPhoto.url = getPhotoWithSize(cleanStory, 200);
         return cleanStory;
     });
 

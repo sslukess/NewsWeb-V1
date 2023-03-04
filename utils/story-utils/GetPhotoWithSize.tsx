@@ -1,5 +1,8 @@
-import { NormalisedStory } from "../../types/index.d";
+export const getPhotoWithSize = (photoURL: string, width: number | null = null, height: number | null = null): string => {
 
-export const getPhotoWithSize = (story: NormalisedStory, size: number): string => {
-    return `${story.storyPhoto.url}?w=${size}`;
+    // Build the parameters if passed the values. 
+    const widthParameter = width ? `?w=${width}` : '';
+    const heightParameter = height ? `?h=${height}` : '';
+
+    return `${photoURL}` + widthParameter + heightParameter;
 }
