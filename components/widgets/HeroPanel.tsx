@@ -6,7 +6,6 @@ import Button from 'react-bootstrap/Button';
 
 import { breakpoint, breakpointSizes } from '../../utils/style-mix-ins/breakpoints';
 
-
 const HeroWrapper = styled.div`
     display: flex;
     justify-content: end;
@@ -56,9 +55,9 @@ const Paragraph = ({ copy }) => {
     )
 }
 
-const HeroButton = ({ copy }) => {
+const HeroButton = ({ copy, href }) => {
     return (
-        <Button>{copy}</Button>
+        <Button href={href}>{copy}</Button>
     )
 }
 
@@ -73,7 +72,7 @@ const HeroPanel = ({ imgSrc, headingCopy, paragraphCopy, buttonCopy }) => {
                         <IntroBlockWrapper>
                             <IntroBlock>
                                 <Heading copy={headingCopy} />
-                                <div> <Paragraph copy={paragraphCopy} /> <HeroButton copy={buttonCopy} /></div>
+                                <div> <Paragraph copy={paragraphCopy} /> <HeroButton copy={buttonCopy} href={'/just-in'} /> </div>
                             </IntroBlock>
                         </IntroBlockWrapper>
 
