@@ -1,5 +1,5 @@
-import mapStoriesToCards from "./MapStoriesToCards";
+import MapStoriesToCards from "./MapStoriesToCards";
 
 export {
-    mapStoriesToCards,
+    MapStoriesToCards,
 };

@@ -1,6 +1,6 @@
 
 //Compontent Import
-import MapStoriesToCards from '../component-building-blocks/molecules/MapStoriesToCards';
+import { MapStoriesToCards } from "../component-building-blocks/ComponentMasterIndex";
 
 const FrontPgLeadStories = ({stories}) => {
 
