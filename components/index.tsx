@@ -3,9 +3,8 @@ import SiteNavBar from './navigation/SiteNavBar';
 import SiteFooter from './navigation/SiteFooter';
 
 // Widgets
-import HeroPanel from './widgets/HeroPanel'; 
-import TextAndImage from './widgets/TextAndImage';
-import FrontPgLeadStories from './widgets/FrontPageLeadStories';
+import HeroPanel from './widgets Temp/HeroPanel'; 
+import FrontPgLeadStories from './widgets Temp/FrontPageLeadStories';
 
 //..
 
