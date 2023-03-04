@@ -41,12 +41,12 @@ function SiteNavBar() {
     return (
         <StyledNavbar expand="lg">
             <Container>
-                <Navbar.Brand href="#home"><RoundedImage height={80} src={TLB_logo} alt="thelogo"/></Navbar.Brand>
+                <Navbar.Brand href="/"><RoundedImage height={80} src={TLB_logo} alt="thelogo"/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
                     <StyledNav>
                         <StyledNavLink href="/">Home</StyledNavLink>
-                        <StyledNavLink href="#link">Latest News</StyledNavLink>
+                        <StyledNavLink href="/just-in">Latest News</StyledNavLink>
                         <StyledNavDropdown title="Catagories" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">
                                 Community

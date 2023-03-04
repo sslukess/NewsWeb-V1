@@ -9,6 +9,10 @@
 # User-specific stuff
 .idea
 
+# iCloud 
+
+.icloud
+
 # CMake
 cmake-build-*/
 # File-based project format
