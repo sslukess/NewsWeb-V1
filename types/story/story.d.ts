@@ -4,6 +4,7 @@ import { rawListeners } from "process";
 export interface NormalisedStory {
     storyTitle: string;
     storyBody: React.ReactNode;
+    storySummary: React.ReactNode;
     storyPhoto: {
         fileName: string;
         url: string;
