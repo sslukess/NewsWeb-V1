@@ -1,11 +1,21 @@
-import styled from 'styled-components';
 import getLatestStories from "../../graphql/query-functions/LatestStories";
+import { RawStory, NormalisedStory } from "../../types/index.d";
+import mapRawResponseToStoryObject from "../../graphql/data-mapping/StoryDataMapping";
+import { getPhotoWithSize } from "../../utils/story-utils/GetPhotoWithSize";
 
 // Components
 import JustInStoriesSection from '../../components/partial-pages/JustInStories';
 import Container from 'react-bootstrap/Container';
 
 const JustInPage = ({stories}) => {
+
+    // clean the stories data
+    const cleanedStories: NormalisedStory[] = stories.map((item) => {
+        const cleanStory = mapRawResponseToStoryObject(item);
+        cleanStory.storyPhoto.url = getPhotoWithSize(cleanStory, 200);
+        return cleanStory;
+    });
+
     return (
         <>
 
@@ -13,7 +23,7 @@ const JustInPage = ({stories}) => {
                 <h1>Just In</h1>
             </Container>
 
-            <JustInStoriesSection stories={stories}/>
+            <JustInStoriesSection stories={cleanedStories}/>
 
         </>
     );
@@ -23,7 +33,7 @@ export default JustInPage;
 
 // Server side render the page on request as the content is dynamic
 export const getServerSideProps = async () => {
-    const stories = await getLatestStories(3);
+    const stories: RawStory[] = await getLatestStories(3);
 
     return {
         props: { stories },

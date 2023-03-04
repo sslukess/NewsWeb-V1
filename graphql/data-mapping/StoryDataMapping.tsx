@@ -20,7 +20,7 @@ const mapRawResponseToStoryObject = (data: any) => {
     const StoryTextJSX = documentToReactComponents(storyText.json);
 
     // pull the image URL
-    const storyPhotoURL = `${storyPhoto.url}?w=200`;
+    const storyPhotoURL = storyPhoto.url;
 
     // map data to normalisedStory
     normalisedStory.storyTitle = storyTitle;

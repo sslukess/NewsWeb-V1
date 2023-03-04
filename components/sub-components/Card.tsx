@@ -37,7 +37,7 @@ max-width: 90%;
 margin: 10px auto;
 `;
 
-function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy, onClick, link }) {
+function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy, onClick, link }: BasicCardProps) {
   return (
     <StyledCard >
       <ImageWrapper>

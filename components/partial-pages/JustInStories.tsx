@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import Image from "next/image";
-import { useRouter } from "next/router";
+
+// Types
+import { NormalisedStory } from "../../types/index.d";
 
 //components 
 import Container  from "react-bootstrap/Container";
@@ -10,10 +10,9 @@ import Col  from "react-bootstrap/Col";
 import BasicCard from "../sub-components/Card";
 
 //Styles 
-
 const ImageWrapper = styled.div`
     width: 100%;
-    height: 180px;
+    height: auto;
     overflow: hidden;
 `;
 
@@ -21,7 +20,7 @@ const ImageWrapper = styled.div`
 const JustInStoriesSection = (props) => {
 
     // Pull stories from props
-    const { stories }: {stories: any[]} = props;
+    const { stories }: {stories: NormalisedStory[]} = props;
 
     return (
         <Container>
@@ -32,7 +31,7 @@ const JustInStoriesSection = (props) => {
                        <BasicCard
                         imgSrc={`${story.storyPhoto.url}`}
                         cardTitle={story.storyTitle}
-                        cardCopy={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'}
+                        cardCopy={<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>}
                         buttonCopy={"Read Story"}
                         link={`/story/${story.slug}`}
                     />
