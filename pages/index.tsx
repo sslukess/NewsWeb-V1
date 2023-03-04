@@ -1,9 +1,23 @@
 
 import { HeroPanel, FrontPgLeadStories } from '../components/index';
 import { dummyStories } from '../components/widgets/FrontPageLeadStories';
+import getLatestStories from '../graphql/query-functions/LatestStories';
+import { NormalisedStory } from '../types/index.d';
+import mapRawResponseToStoryObject from '../graphql/data-mapping/StoryDataMapping';
+import { getPhotoWithSize } from '../utils/story-utils/GetPhotoWithSize';
 
 
-function HomePage() {
+function HomePage(props) {
+
+  const { latestStories } = props;
+
+  // clean the stories data
+  const cleanedStories: NormalisedStory[] = latestStories.map((item) => {
+    const cleanStory = mapRawResponseToStoryObject(item);
+    cleanStory.storyPhoto.url = getPhotoWithSize(cleanStory, 200);
+    return cleanStory;
+});
+
   return (
     <>
 
@@ -16,21 +30,22 @@ function HomePage() {
     />
 
 
-    <FrontPgLeadStories
-      story1={dummyStories.story1}
-      story2={dummyStories.story2}
-      story3={dummyStories.story3}
-    />
+    <FrontPgLeadStories latestStories={cleanedStories} />
 
 </>
 
   )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps() {
+
+  const latestStories = await getLatestStories(3);
+
   return {
-    props: {}, // will be passed to the page component as props
+    props: {
+      latestStories: latestStories,
+    }, // will be passed to the page component as props
   }
 }
 
-export default HomePage
+export default HomePage;
