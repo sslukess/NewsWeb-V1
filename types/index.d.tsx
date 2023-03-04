@@ -1,9 +1,9 @@
 // imports
-import { NormalisedStory } from "./story/story";
+import { RawStory, NormalisedStory } from "./story/story";
 
 
 //exports
-export type { NormalisedStory }
+export type { NormalisedStory, RawStory }
 
 
 
