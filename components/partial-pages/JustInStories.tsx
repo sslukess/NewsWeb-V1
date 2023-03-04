@@ -31,7 +31,7 @@ const JustInStoriesSection = (props) => {
                        <BasicCard
                         imgSrc={`${story.storyPhoto.url}`}
                         cardTitle={story.storyTitle}
-                        cardCopy={<>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</>}
+                        cardCopy={story.storySummary}
                         buttonCopy={"Read Story"}
                         link={`/story/${story.slug}`}
                     />

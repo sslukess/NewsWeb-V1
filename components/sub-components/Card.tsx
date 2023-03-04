@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 interface BasicCardProps {
   imgSrc: string;
   cardTitle: string;
-  cardCopy: JSX.Element;
+  cardCopy: React.ReactNode;
   buttonCopy: string;
   onClick?: () => void;  
   link?: string;
@@ -45,7 +45,8 @@ function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy, onClick, link }: B
       </ImageWrapper>
       <Card.Body>
         <Card.Title>{cardTitle}</Card.Title>
-        <Card.Text>
+        {/* Setting card text to render a div, stops Next hydration errors */}
+        <Card.Text as={"div"}> 
           {cardCopy}
         </Card.Text>
         <Button variant="primary" onClick={onClick} href={link}>{buttonCopy}</Button>
