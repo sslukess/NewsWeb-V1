@@ -1,6 +1,5 @@
 
 import { HeroPanel, FrontPgLeadStories } from '../components/index';
-import { dummyStories } from '../components/widgets/FrontPageLeadStories';
 import getLatestStories from '../graphql/query-functions/LatestStories';
 import { NormalisedStory } from '../types/index.d';
 import mapRawResponseToStoryObject from '../graphql/data-mapping/StoryDataMapping';

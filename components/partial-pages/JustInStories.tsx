@@ -7,7 +7,7 @@ import { NormalisedStory } from "../../types/index.d";
 import Container  from "react-bootstrap/Container";
 import Row  from "react-bootstrap/Row";
 import Col  from "react-bootstrap/Col";
-import BasicCard from "../sub-components/Card";
+import BasicCard from "../component-building-blocks/atoms/Card";
 
 //Styles 
 const ImageWrapper = styled.div`
