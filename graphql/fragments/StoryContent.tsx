@@ -7,6 +7,9 @@ fragment StoryElements on StoryCollection {
       storyText {
         json
       }
+      storySummary {
+        json
+      }
       storyPhoto {
         fileName
         url

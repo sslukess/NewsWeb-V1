@@ -66,7 +66,7 @@ const mapRawResponseToStoryObject = (data: any) => {
         slug: '',
     };
 
-    // get the data for the story page
+    // get the data for the story page, (note this is with with defaults in place.)
     const {
         storyTitle = defaultRawStory.storyTitle,
         storyText = defaultRawStory.storyText,
@@ -75,18 +75,20 @@ const mapRawResponseToStoryObject = (data: any) => {
         slug = defaultRawStory.slug } = data;
 
     // Convert the storyText and storySummary Rich Text json to JSXs
-    const StoryTextJSX = documentToReactComponents(storyText.json);
-    const StorySummaryJSX = documentToReactComponents(storySummary.json);
+    // Note extra check for null as the Rich Text entry can have a null value itself. 
+    const StoryTextJSX = storyText?.json ? documentToReactComponents(storyText.json) : <></>;
+    const StorySummaryJSX = storySummary?.json ? documentToReactComponents(storySummary.json) : <></>;
 
-    // pull the image URL
-    const storyPhotoURL = storyPhoto.url;
+    // pull the image URL + file name from the storyPhoto object
+    const storyPhotoURL = storyPhoto?.url;
+    const storyPhotoFileName = storyPhoto?.fileName;
 
     // map data to normalisedStory
     normalisedStory.storyTitle = storyTitle;
     normalisedStory.storyBody = StoryTextJSX;
     normalisedStory.storySummary = StorySummaryJSX;
     normalisedStory.storyPhoto = {
-        fileName: storyPhoto.fileName,
+        fileName: storyPhotoFileName,
         url: storyPhotoURL,
     };
     normalisedStory.slug = slug;
