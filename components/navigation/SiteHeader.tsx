@@ -31,6 +31,18 @@ const HeaderElement = styled.div`
     padding: 1rem;
 `;
 
+// Logo wrapper 
+const LogoWrapper = styled.div`
+    padding: 1rem;
+    width: 20em;
+`;
+
+// logo img element 
+const LogoImg = styled.img`
+    width: 100%;
+    height: auto
+`;
+
 
 function SiteHeaderBar(props) {
 
@@ -38,7 +50,9 @@ function SiteHeaderBar(props) {
 
         <HeaderContainer fluid>
             <HeaderElement>
-                <h1>Logo</h1>
+                <LogoWrapper>
+                    <LogoImg src="/slim-logo.png" alt="logo" />
+                </LogoWrapper>
             </HeaderElement>
             <HeaderElement>
                 <h1>Nav</h1>
