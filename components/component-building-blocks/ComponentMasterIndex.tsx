@@ -19,7 +19,7 @@ export {
     MapStoriesToCards
 };
 
-// A named export with the whole library
+// A default export with the whole library
 const allComponents = {
     ...atomComponentIndex,
     ...moleculeComponentsIndex,

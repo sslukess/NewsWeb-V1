@@ -16,7 +16,7 @@ const robotoSlab = Roboto_Slab({ subsets: ["latin"],
 weight: "400" })
 
 // importing components
-import { SiteNavBar, SiteFooter } from '../components/index'
+import { SiteNavBar, SiteFooter, SiteHeader } from '../components/index'
 
 // === End Imports ===
 
@@ -30,7 +30,8 @@ const App = ({Component, pageProps}) => {
         <ThemeProvider theme={theme}>
             <SSRProvider>
                 <Main className={robotoSlab.className}>
-                    <SiteNavBar />
+                    {/* <SiteNavBar /> */}
+                    <SiteHeader />
                         <section>
                             <Component {...pageProps} />
                         </section>
