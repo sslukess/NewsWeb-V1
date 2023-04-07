@@ -47,6 +47,8 @@ const LogoImg = styled.img`
 
 function SiteHeaderBar(props) {
 
+    const screenSize = useScreenSize();
+
     return (
         <HeaderContainer fluid>
             <HeaderElement>
@@ -54,6 +56,10 @@ function SiteHeaderBar(props) {
                     <LogoImg src="/slim-logo.png" alt="logo" />
                 </LogoWrapper>
             </HeaderElement>
+
+            {/* Search bar - should hide for tablet/mobile */}
+            {
+                !screenSize.isTabletOrMobile && 
             <HeaderElement>
                 <Form>
                     <InputGroup>
@@ -62,6 +68,8 @@ function SiteHeaderBar(props) {
                     </InputGroup>
                 </Form>
             </HeaderElement>
+            }
+            
         </HeaderContainer>
     )
 
