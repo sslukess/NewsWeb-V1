@@ -4,13 +4,13 @@ import styled from 'styled-components';
 
 // placeholder for tags/navs 
 const tags = [
-    "tag1",
-    "tag2",
-    "tag3",
-    "tag4",
-    "tag5",
-    "tag6",
-    "tag7",
+    "Just In",
+    "Local",
+    "Global",
+    "Gardening",
+    "Politics",
+    "Pets",
+    "Schools",
 ];
 
 // === STYLES ===
@@ -44,7 +44,6 @@ const LogoImg = styled.img`
     height: auto
 `;
 
-
 function SiteHeaderBar(props) {
 
     return (
@@ -55,12 +54,12 @@ function SiteHeaderBar(props) {
                 </LogoWrapper>
             </HeaderElement>
             <HeaderElement>
-                    <Form>
-                        <InputGroup>
-                            {/* <InputGroup.Text>search</InputGroup.Text> */}
-                            <Form.Control type="text" placeholder='search' />
-                        </InputGroup>
-                    </Form>
+                <Form>
+                    <InputGroup>
+                        {/* <InputGroup.Text>search</InputGroup.Text> */}
+                        <Form.Control type="text" placeholder='search' />
+                    </InputGroup>
+                </Form>
             </HeaderElement>
         </HeaderContainer>
     )
@@ -70,9 +69,18 @@ function SiteHeaderBar(props) {
 // Nav styles
 const CatagoryNavBarContainer = styled(Container)`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 5px;
+    border-bottom: 10px solid ${({ theme }) => theme.colors.primary};
+`;
+
+
+// story nav bar tag 
+const CatagoryNavBarStoryTag = styled.div`
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
 `;
 
 function StoryCatagoryNavBar(props) {
@@ -81,13 +89,11 @@ function StoryCatagoryNavBar(props) {
 
         <CatagoryNavBarContainer fluid>
             {tags.map((tag) => (
-                <div>{tag}</div>
+                <CatagoryNavBarStoryTag>{tag}</CatagoryNavBarStoryTag>
             ))}
         </CatagoryNavBarContainer>
     )
-
 }
-
 
 function SiteHeader() {
     return (
