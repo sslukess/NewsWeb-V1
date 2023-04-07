@@ -2,7 +2,7 @@
 import { NormalisedStory } from "../../types/index.d";
 
 //components 
-import { MapStoriesToCards } from "../component-building-blocks/ComponentMasterIndex";
+import { MapStoriesToCards } from '../component-building-blocks/ComponentBuildingBlockIndex';
 
 const JustInStoriesSection = (props) => {
 

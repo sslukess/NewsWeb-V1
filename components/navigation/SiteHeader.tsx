@@ -1,6 +1,7 @@
 import { Container, Form, InputGroup } from 'react-bootstrap';
 import styled from 'styled-components';
 
+
 // placeholder for tags/navs 
 const tags = [
     "tag1",
@@ -47,7 +48,6 @@ const LogoImg = styled.img`
 function SiteHeaderBar(props) {
 
     return (
-
         <HeaderContainer fluid>
             <HeaderElement>
                 <LogoWrapper>
@@ -55,15 +55,14 @@ function SiteHeaderBar(props) {
                 </LogoWrapper>
             </HeaderElement>
             <HeaderElement>
-                <Form>
-                    <InputGroup>
-                    {/* <InputGroup.Text>search</InputGroup.Text> */}
-                    <Form.Control type="text" placeholder='search'/>
-                    </InputGroup>
-                </Form>
+                    <Form>
+                        <InputGroup>
+                            {/* <InputGroup.Text>search</InputGroup.Text> */}
+                            <Form.Control type="text" placeholder='search' />
+                        </InputGroup>
+                    </Form>
             </HeaderElement>
         </HeaderContainer>
-
     )
 
 }

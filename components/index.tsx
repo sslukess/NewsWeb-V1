@@ -6,6 +6,7 @@ import SiteHeader from './navigation/SiteHeader';
 // Widgets
 import HeroPanel from './widgets/HeroPanel'; 
 import FrontPgLeadStories from './partial-pages/FrontPageLeadStories';
+import Sidebar from './widgets/Sidebar';
 
 //..
 
@@ -19,4 +20,5 @@ export {
     // Widgets
     HeroPanel,
     FrontPgLeadStories,
+    Sidebar,
 };
