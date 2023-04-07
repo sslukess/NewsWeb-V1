@@ -1,18 +1,7 @@
 import { Container, Form, InputGroup } from 'react-bootstrap';
 import styled from 'styled-components';
 import useScreenSize from '../../utils/custom-hooks/useScreenSize';
-
-
-// placeholder for tags/navs 
-const tags = [
-    "Just In",
-    "Local",
-    "Global",
-    "Gardening",
-    "Politics",
-    "Pets",
-    "Schools",
-];
+import StoryCatagoryNavBar from './SiteStoryTags';
 
 // === STYLES ===
 
@@ -45,7 +34,7 @@ const LogoImg = styled.img`
     height: auto
 `;
 
-function SiteHeaderBar(props) {
+function SiteHeaderBar() {
 
     const screenSize = useScreenSize();
 
@@ -69,39 +58,10 @@ function SiteHeaderBar(props) {
                 </Form>
             </HeaderElement>
             }
-            
+
         </HeaderContainer>
     )
 
-}
-
-// Nav styles
-const CatagoryNavBarContainer = styled(Container)`
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 5px;
-    border-bottom: 10px solid ${({ theme }) => theme.colors.primary};
-`;
-
-
-// story nav bar tag 
-const CatagoryNavBarStoryTag = styled.div`
-    padding: 5px;
-    margin: 5px;
-    text-align: center;
-`;
-
-function StoryCatagoryNavBar() {
-
-    return (
-
-        <CatagoryNavBarContainer fluid>
-            {tags.map((tag) => (
-                <CatagoryNavBarStoryTag>{tag}</CatagoryNavBarStoryTag>
-            ))}
-        </CatagoryNavBarContainer>
-    )
 }
 
 function SiteHeader() {
