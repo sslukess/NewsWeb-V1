@@ -1,8 +1,8 @@
 // Navigation
-import SiteNavBar from './navigation/SiteNavBar_old';
 import SiteFooter from './navigation/SiteFooter';
 import SiteHeader from './navigation/SiteHeader';
 import SiteBurgerMenu from './navigation/SiteBurgerMenu';
+import { BasicStoryCategoryTags } from './navigation/SiteStoryTags';
 
 // Widgets
 import HeroPanel from './widgets/HeroPanel'; 
@@ -15,10 +15,10 @@ import Sidebar from './widgets/Sidebar';
 // Export 
 export {
     // Navigation
-    SiteNavBar,
     SiteFooter,
     SiteHeader,
     SiteBurgerMenu,
+    BasicStoryCategoryTags,
     // Widgets
     HeroPanel,
     FrontPgLeadStories,

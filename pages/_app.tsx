@@ -9,7 +9,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 // Break points
-import useSizeProvider from '../utils/custom-hooks/useScreenSize';
+import useSizeSize from '../utils/custom-hooks/useScreenSize';
 
 //CSS Imports
 import '../styling/CSS/reset.css'
@@ -24,7 +24,7 @@ const robotoSlab = Roboto_Slab({
 })
 
 // importing components
-import { Sidebar, SiteFooter, SiteHeader, SiteBurgerMenu } from '../components/index'
+import { SiteFooter, SiteHeader, SiteBurgerMenu } from '../components/index'
 
 // === End Imports ===
 
@@ -34,20 +34,13 @@ const Main = styled.main`
 
 const App = ({ Component, pageProps }) => {
 
-    const screenSize = useSizeProvider();
+    const screenSize = useSizeSize();
 
     return (
         <>
             {/* Site Burger Menu */}
             {screenSize.isTabletOrMobile &&
-                <SiteBurgerMenu>
-                    <Form>
-                        <InputGroup>
-                            {/* <InputGroup.Text>search</InputGroup.Text> */}
-                            <Form.Control type="text" placeholder='search' />
-                        </InputGroup>
-                    </Form>
-                </SiteBurgerMenu>
+                <SiteBurgerMenu />
             }
 
             {/* Main App */}

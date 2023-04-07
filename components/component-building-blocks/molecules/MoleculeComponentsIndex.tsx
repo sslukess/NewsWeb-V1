@@ -1,5 +1,7 @@
 import MapStoriesToCards from "./MapStoriesToCards";
+import SearchBar from "./SearchBar";
 
 export {
-    MapStoriesToCards
+    MapStoriesToCards,
+    SearchBar
 };

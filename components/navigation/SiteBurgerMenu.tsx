@@ -1,5 +1,22 @@
 import Link from 'next/link'
 import { slide as Menu } from 'react-burger-menu'
+import { useRouter } from 'next/router'
+import { placeholderTags } from './TestingDataTags'
+import styled from 'styled-components'
+
+// Import Components
+import { SearchBar } from '../component-building-blocks/ComponentBuildingBlockIndex'
+
+
+// Styled Search Bar
+const SearchBarDiv = styled.div`
+    padding: 5px;
+`;
+
+// Story Tag Div
+const StoryTagDiv = styled.div`
+    padding: 5px;
+`;
 
 const HamburgerMenu = ({ children }) => {
 
@@ -7,7 +24,26 @@ const HamburgerMenu = ({ children }) => {
         <Menu right>
             {children}
         </Menu>
-    ) 
+    )
 }
 
-export default HamburgerMenu
+const HamburgerMenuWithItems = () => {
+
+    const router = useRouter()
+
+    return (
+        <HamburgerMenu>
+            <SearchBarDiv>
+                <SearchBar />
+            </SearchBarDiv>
+            {placeholderTags.map((tag) => (
+                <StoryTagDiv>
+                    {tag}
+                </StoryTagDiv>
+            ))}
+        </HamburgerMenu>
+    )
+}
+
+const SiteBurgerMenu = HamburgerMenuWithItems;
+export default SiteBurgerMenu

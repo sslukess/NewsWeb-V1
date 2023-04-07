@@ -1,19 +1,7 @@
 
 import styled from 'styled-components';
 import { Container, Form, InputGroup } from 'react-bootstrap';
-
-// placeholder for tags/navs 
-const tags = [
-    "Just In",
-    "Local",
-    "Global",
-    "Gardening",
-    "Politics",
-    "Pets",
-    "Schools",
-];
-
-
+import { placeholderTags } from './TestingDataTags';
 
 // Nav styles
 const CatagoryNavBarContainer = styled(Container)`
@@ -33,6 +21,7 @@ const CatagoryNavBarStoryTag = styled.div`
 `;
 
 export function BasicStoryCategoryTags({tags}) {
+
     return (
         tags.map((tag) => (
             <CatagoryNavBarStoryTag>{tag}</CatagoryNavBarStoryTag>
@@ -45,7 +34,7 @@ function StoryCatagoryNavBar() {
     return (
 
         <CatagoryNavBarContainer fluid>
-            <BasicStoryCategoryTags tags={tags} />
+            <BasicStoryCategoryTags tags={placeholderTags} />
         </CatagoryNavBarContainer>
     )
 }

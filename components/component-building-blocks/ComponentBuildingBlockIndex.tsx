@@ -9,6 +9,7 @@ const {
 // Getting all molecules
 const {
     MapStoriesToCards,
+    SearchBar
 } = moleculeComponentsIndex;
 
 // named exports for atoms + molecules
@@ -17,6 +18,7 @@ export {
     BasicCard,
     // MOLECULES
     MapStoriesToCards,
+    SearchBar
 };
 
 // A default export with the whole library
