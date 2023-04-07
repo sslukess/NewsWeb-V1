@@ -38,15 +38,17 @@ const App = ({ Component, pageProps }) => {
 
     return (
         <>
-            {/* Site Burger Menu */}
-            {screenSize.isTabletOrMobile &&
-                <SiteBurgerMenu />
-            }
 
-            {/* Main App */}
             <div id="outer-container">
                 <ThemeProvider theme={theme}>
                     <SSRProvider>
+
+                        {/* Site Burger Menu */}
+                        {screenSize.isTabletOrMobile &&
+                            <SiteBurgerMenu />
+                        }
+
+                        {/* Main App */}
                         <Main className={robotoSlab.className} >
                             <SiteHeader />
                             <section>

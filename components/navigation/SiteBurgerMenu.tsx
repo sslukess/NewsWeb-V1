@@ -16,6 +16,7 @@ const SearchBarDiv = styled.div`
 // Story Tag Div
 const StoryTagDiv = styled.div`
     padding: 5px;
+    color: ${({ theme }) => theme.colors.primary};
 `;
 
 const HamburgerMenu = ({ children }) => {
