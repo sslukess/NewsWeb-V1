@@ -9,7 +9,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 // Break points
-import { breakpoint, breakpointSizes } from '../utils/style-mix-ins/breakpoints';
+import useSizeProvider from '../utils/custom-hooks/useScreenSize';
 
 //CSS Imports
 import '../styling/CSS/reset.css'
@@ -34,11 +34,12 @@ const Main = styled.main`
 
 const App = ({ Component, pageProps }) => {
 
+    const screenSize = useSizeProvider();
+
     return (
         <>
-
             {/* Site Burger Menu */}
-            {breakpoint.down(breakpointSizes.md) &&
+            {screenSize.isTabletOrMobile &&
                 <SiteBurgerMenu>
                     <Form>
                         <InputGroup>
