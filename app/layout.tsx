@@ -24,7 +24,7 @@ const robotoSlab = Roboto_Slab({
 })
 
 // importing components
-import { SiteFooter, SiteHeader } from '../components/index'
+import { SiteFooter, SiteHeader, SiteBurgerMenu } from '../components/index'
 
 // importing utils 
 import getStoryTopics from '../utils/story-utils/GetStoryTopics';
@@ -50,7 +50,7 @@ const RootLayout = async ({ children }) => {
 
 
                             {/* Site Burger Menu */}
-                            {/* <SiteBurgerMenu /> */}
+                            <SiteBurgerMenu />
 
                             {/* Main App */}
                             <main className={robotoSlab.className} style={{color: theme.text.colors.primary}} >

@@ -12,26 +12,19 @@ import useSizeSize from '../../utils/custom-hooks/useScreenSize';
 
 
 // Styled Search Bar
-const SearchBarDiv = ({children}) => {
-    return (
-        <div>
-            {children}
-        </div>
-    )
-};
+const SearchBarDiv = styled.div`
+padding: 5px;
+`;
 
 // styled.div`
 //     padding: 5px;
 // `;
 
 // Story Tag Div
-const StoryTagDiv = ({children}) => {
-    return (
-        <div>
-            {children}
-        </div>
-    )
-};
+const StoryTagDiv = styled.div`
+    padding: 5px;
+    color: red;
+`;
 
 // styled.div`
 //     padding: 5px;
@@ -53,24 +46,22 @@ const HamburgerMenuWithItems = () => {
 
     return (
         <>
-        <div>hello</div>
+            {screenSize.isTabletOrMobile &&
+                <HamburgerMenu>
+                    <SearchBarDiv>
+                        <SearchBar />
+                    </SearchBarDiv>
+                    {placeholderTags.map((tag) => (
+                        <StoryTagDiv>
+                            {tag}
+                        </StoryTagDiv>
+                    ))}
+                </HamburgerMenu>
+            }
         </>
 
     )
 }
-
-// {screenSize.isTabletOrMobile &&
-//     <HamburgerMenu>
-//         <SearchBarDiv>
-//             <SearchBar />
-//         </SearchBarDiv>
-//         {/* {placeholderTags.map((tag) => (
-//             <StoryTagDiv>
-//                 {tag}
-//             </StoryTagDiv>
-//         ))} */}
-//     </HamburgerMenu>
-// }
 
 const SiteBurgerMenu = HamburgerMenuWithItems;
 export default SiteBurgerMenu
