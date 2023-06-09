@@ -2,12 +2,12 @@
 import SiteFooter from './navigation/SiteFooter';
 import SiteHeader from './navigation/SiteHeader';
 import SiteBurgerMenu from './navigation/SiteBurgerMenu';
-import { BasicStoryCategoryTags } from './navigation/SiteStoryTopicNavBar';
+import StoryTopicNavBar from './navigation/SiteStoryTopicNavBar';
 
 // Widgets
 import HeroPanel from './widgets/HeroPanel'; 
 import FrontPgLeadStories from './partial-pages/FrontPageLeadStories';
-import Sidebar from './widgets/Sidebar';
+
 
 //..
 
@@ -18,9 +18,9 @@ export {
     SiteFooter,
     SiteHeader,
     SiteBurgerMenu,
-    BasicStoryCategoryTags,
+    StoryTopicNavBar,
     // Widgets
     HeroPanel,
     FrontPgLeadStories,
-    Sidebar,
+
 };

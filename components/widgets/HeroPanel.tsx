@@ -1,4 +1,7 @@
+'use client'
+
 import styled from 'styled-components';
+import theme from '../../styling/CSS/theme/theme';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -26,7 +29,7 @@ const IntroBlock = styled.div`
     align-items: flex-start;
     border-radius: 2px;
     padding: 20px;
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: ${theme.colors.primary};
 
 
     ${breakpoint.up(breakpointSizes.md)` {

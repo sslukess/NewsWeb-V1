@@ -1,3 +1,5 @@
+'use client'
+
 import { BasicCard } from "../atoms/AtomComponentIndex";
 import { Col, Row, Container } from "react-bootstrap";
 import { NormalisedStory } from "../../../types/index.d";

@@ -32,7 +32,7 @@ import { useEffect } from 'react';
 
 // === End Imports ===
 const Main = styled.main`
-    color: ${({ theme }) => theme.text.colors.primary};
+    color: ${theme.text.colors.primary};
 `;
 
 const App = ({ Component, pageProps, appProps }) => {

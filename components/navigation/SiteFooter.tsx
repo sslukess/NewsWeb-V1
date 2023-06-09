@@ -1,8 +1,10 @@
+'use client'
 import styled from 'styled-components';
+import theme from '../../styling/CSS/theme/theme';
 
 const StyledFooter = styled.footer`
-    background-color: ${({ theme }) => theme.colors.secondary};
-    color: ${({ theme }) => theme.text.colors.light};
+    background-color: ${theme.colors.secondary};
+    color: ${theme.text.colors.light};
     padding: 10px;
     width: 100%;
 `;

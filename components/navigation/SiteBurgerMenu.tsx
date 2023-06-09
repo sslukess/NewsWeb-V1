@@ -1,50 +1,80 @@
-import Link from 'next/link'
-import { slide as Menu } from 'react-burger-menu'
-import { useRouter } from 'next/router'
+'use client'
+
+// import { slide as Menu } from 'react-burger-menu'
 import { placeholderTags } from './TestingDataTags'
 import styled from 'styled-components'
+// import SSRProvider from 'react-bootstrap/SSRProvider';
 
 // Import Components
 import { SearchBar } from '../component-building-blocks/ComponentBuildingBlockIndex'
 
+// Break points
+import useSizeSize from '../../utils/custom-hooks/useScreenSize';
+
 
 // Styled Search Bar
-const SearchBarDiv = styled.div`
-    padding: 5px;
-`;
+const SearchBarDiv = ({children}) => {
+    return (
+        <div>
+            {children}
+        </div>
+    )
+};
+
+// styled.div`
+//     padding: 5px;
+// `;
 
 // Story Tag Div
-const StoryTagDiv = styled.div`
-    padding: 5px;
-    color: ${({ theme }) => theme.colors.primary};
-`;
-
-const HamburgerMenu = ({ children }) => {
-
+const StoryTagDiv = ({children}) => {
     return (
-        <Menu right>
+        <div>
             {children}
-        </Menu>
+        </div>
     )
-}
+};
+
+// styled.div`
+//     padding: 5px;
+//     color: red;
+// `;
+
+// const HamburgerMenu = ({ children }) => {
+
+//     return (
+//         <Menu right>
+//             {children}
+//         </Menu>
+//     )
+// }
 
 const HamburgerMenuWithItems = () => {
 
-    const router = useRouter()
+    const screenSize = useSizeSize();
 
     return (
-        <HamburgerMenu>
-            <SearchBarDiv>
-                <SearchBar />
-            </SearchBarDiv>
-            {placeholderTags.map((tag) => (
-                <StoryTagDiv>
-                    {tag}
-                </StoryTagDiv>
-            ))}
-        </HamburgerMenu>
+        <>
+        <div>hello</div>
+
+         
+
+        </>
+
     )
 }
+
+// {screenSize.isTabletOrMobile &&
+//     <HamburgerMenu>
+//         <SearchBarDiv>
+//             <SearchBar />
+//         </SearchBarDiv>
+//         {/* {placeholderTags.map((tag) => (
+//             <StoryTagDiv>
+//                 {tag}
+//             </StoryTagDiv>
+//         ))} */}
+//     </HamburgerMenu>
+// }
 
 const SiteBurgerMenu = HamburgerMenuWithItems;
 export default SiteBurgerMenu

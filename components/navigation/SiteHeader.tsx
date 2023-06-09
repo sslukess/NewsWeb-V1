@@ -1,20 +1,23 @@
+'use client'
+
 import { Container, Form, InputGroup } from 'react-bootstrap';
 import styled from 'styled-components';
 import useScreenSize from '../../utils/custom-hooks/useScreenSize';
-import StoryCatagoryNavBar from './SiteStoryTopicNavBar';
+import StoryTopicNavBar from './SiteStoryTopicNavBar';
+import theme from '../../styling/CSS/theme/theme';
 
 // === STYLES ===
 
 // Header container 
 
 const HeaderContainer = styled(Container)`
-    background-color: ${({ theme }) => theme.colors.primary};
-    color: ${({ theme }) => theme.text.colors.primary};
+    background-color: ${theme.colors.primary};
+    color: ${theme.text.colors.primary};
     display: flex;
     justify-content: space-between;
     align-items: end;
     padding: 0;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.secondary};
+    border-bottom: 1px solid ${theme.colors.secondary};
 `;
 
 // Header element 
@@ -74,7 +77,7 @@ function SiteHeader({topics}) {
 
             {/* Story Tags - should hide at mobile sizes */}
             {
-                !screenSize.isTabletOrMobile && <StoryCatagoryNavBar topics={topics}/>
+                !screenSize.isTabletOrMobile && <StoryTopicNavBar topics={topics}/>
             }
         </>
     )
