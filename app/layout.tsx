@@ -1,7 +1,5 @@
 // styled components theme provider
-// import { ThemeProvider } from 'styled-components'
-// import theme from '../styling/CSS/theme/theme'
-// import styled from 'styled-components';
+import theme from '../styling/CSS/theme/theme'
 
 import StyledComponentsRegistry from '../styling/styled-components/registry'
 
@@ -29,13 +27,10 @@ const robotoSlab = Roboto_Slab({
 import { SiteFooter, SiteHeader } from '../components/index'
 
 // importing utils 
-// import getStoryTopics from '../utils/story-utils/GetStoryTopics';
+import getStoryTopics from '../utils/story-utils/GetStoryTopics';
 // import { useEffect } from 'react';
 
 // === End Imports ===
-// const Main = styled.main`
-//     color: ${({ theme }) => theme.text.colors.primary};
-// `;
 
 const RootLayout = ({ children }) => {
 
@@ -50,7 +45,6 @@ const RootLayout = ({ children }) => {
                 <body>
                     <StyledComponentsRegistry>
                         <div id="outer-container">
-                            {/* <ThemeProvider theme={theme}> */}
 
 
                             {/* Site Burger Menu */}
@@ -58,17 +52,14 @@ const RootLayout = ({ children }) => {
 
 
                             {/* Main App */}
-                            <main className={robotoSlab.className} >
+                            <main className={robotoSlab.className} style={{color: theme.text.colors.primary}} >
                                 <SiteHeader topics={['hi']} />
                                 <section>
                                     {children}
                                 </section>
                                 <SiteFooter />
                             </main>
-
-                            {/* </ThemeProvider> */}
                         </div>
-
                     </StyledComponentsRegistry>
                 </body>
             </html>
