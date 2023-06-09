@@ -1,9 +1,8 @@
 'use client'
 
-// import { slide as Menu } from 'react-burger-menu'
+import { slide as Menu } from 'react-burger-menu'
 import { placeholderTags } from './TestingDataTags'
 import styled from 'styled-components'
-// import SSRProvider from 'react-bootstrap/SSRProvider';
 
 // Import Components
 import { SearchBar } from '../component-building-blocks/ComponentBuildingBlockIndex'
@@ -39,14 +38,14 @@ const StoryTagDiv = ({children}) => {
 //     color: red;
 // `;
 
-// const HamburgerMenu = ({ children }) => {
+const HamburgerMenu = ({ children }) => {
 
-//     return (
-//         <Menu right>
-//             {children}
-//         </Menu>
-//     )
-// }
+    return (
+        <Menu right>
+            {children}
+        </Menu>
+    )
+}
 
 const HamburgerMenuWithItems = () => {
 
@@ -55,9 +54,6 @@ const HamburgerMenuWithItems = () => {
     return (
         <>
         <div>hello</div>
-
-         
-
         </>
 
     )

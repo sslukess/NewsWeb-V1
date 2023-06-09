@@ -3,6 +3,7 @@
 import styled from 'styled-components';
 import theme from '../../styling/CSS/theme/theme';
 import { Container } from 'react-bootstrap';
+import convertTopicsToLinks from '../../utils/story-utils/ConvertTopicsToLinks';
 
 // Nav styles
 const TopicNavBarContainer = styled(Container)`
@@ -23,25 +24,30 @@ const TopicNavBarStoryTag = styled.div`
 
 export function BasicStoryTopicTags({ tags }) {
 
-    if (!tags) return <></>;
+    if (!tags) return <>hello</>;
 
     return (
         tags.map((tag) => (
+
             <TopicNavBarStoryTag>
                 {tag}
             </TopicNavBarStoryTag>
-        )))
+        ))
+    )
 };
 
 
-function StoryTopicNavBar( { topics } ) {
+function StoryTopicNavBar({ topics }) {
 
     // pull link from the tags
-    const tagsLinks = topics.map((tag) => tag.link);
+
+    const tagLinks = convertTopicsToLinks(topics);
+
+    const tagsJustLinks = tagLinks.map((tag) => tag.link);
 
     return (
         <TopicNavBarContainer fluid>
-            <BasicStoryTopicTags tags={tagsLinks} />
+            <BasicStoryTopicTags tags={tagsJustLinks} />
         </TopicNavBarContainer>
     )
 }

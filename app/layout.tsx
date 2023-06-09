@@ -28,13 +28,15 @@ import { SiteFooter, SiteHeader } from '../components/index'
 
 // importing utils 
 import getStoryTopics from '../utils/story-utils/GetStoryTopics';
+import convertTopicsToLinks from '../utils/story-utils/ConvertTopicsToLinks';
 // import { useEffect } from 'react';
 
 // === End Imports ===
 
-const RootLayout = ({ children }) => {
+const RootLayout = async ({ children }) => {
 
-    // const screenSize = useSizeSize();
+    const topics = await getStoryTopics();
+    // console.log(topics);
 
     return (
         <>
@@ -50,10 +52,9 @@ const RootLayout = ({ children }) => {
                             {/* Site Burger Menu */}
                             {/* <SiteBurgerMenu /> */}
 
-
                             {/* Main App */}
                             <main className={robotoSlab.className} style={{color: theme.text.colors.primary}} >
-                                <SiteHeader topics={['hi']} />
+                                <SiteHeader topics={topics} />
                                 <section>
                                     {children}
                                 </section>
