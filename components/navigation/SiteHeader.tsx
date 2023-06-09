@@ -1,7 +1,7 @@
 import { Container, Form, InputGroup } from 'react-bootstrap';
 import styled from 'styled-components';
 import useScreenSize from '../../utils/custom-hooks/useScreenSize';
-import StoryCatagoryNavBar from './SiteStoryTags';
+import StoryCatagoryNavBar from './SiteStoryTopicNavBar';
 
 // === STYLES ===
 
@@ -64,7 +64,7 @@ function SiteHeaderBar() {
 
 }
 
-function SiteHeader() {
+function SiteHeader({topics}) {
 
     const screenSize = useScreenSize();
 
@@ -74,7 +74,7 @@ function SiteHeader() {
 
             {/* Story Tags - should hide at mobile sizes */}
             {
-                !screenSize.isTabletOrMobile && <StoryCatagoryNavBar />
+                !screenSize.isTabletOrMobile && <StoryCatagoryNavBar topics={topics}/>
             }
         </>
     )

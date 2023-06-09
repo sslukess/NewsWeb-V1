@@ -2,7 +2,7 @@
 import SiteFooter from './navigation/SiteFooter';
 import SiteHeader from './navigation/SiteHeader';
 import SiteBurgerMenu from './navigation/SiteBurgerMenu';
-import { BasicStoryCategoryTags } from './navigation/SiteStoryTags';
+import { BasicStoryCategoryTags } from './navigation/SiteStoryTopicNavBar';
 
 // Widgets
 import HeroPanel from './widgets/HeroPanel'; 

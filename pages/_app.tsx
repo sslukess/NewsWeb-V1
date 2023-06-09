@@ -26,15 +26,23 @@ const robotoSlab = Roboto_Slab({
 // importing components
 import { SiteFooter, SiteHeader, SiteBurgerMenu } from '../components/index'
 
-// === End Imports ===
+// importing utils 
+import getStoryTopics from '../utils/story-utils/GetStoryTopics';
+import { useEffect } from 'react';
 
+// === End Imports ===
 const Main = styled.main`
     color: ${({ theme }) => theme.text.colors.primary};
 `;
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps, appProps }) => {
+
 
     const screenSize = useSizeSize();
+
+    useEffect( () => 
+    {console.log('appProps', appProps)}
+    ,[])
 
     return (
         <>
@@ -50,7 +58,7 @@ const App = ({ Component, pageProps }) => {
 
                         {/* Main App */}
                         <Main className={robotoSlab.className} >
-                            <SiteHeader />
+                            <SiteHeader topics={['hi']}/>
                             <section>
                                 <Component {...pageProps} />
                             </section>
@@ -62,5 +70,16 @@ const App = ({ Component, pageProps }) => {
         </>
     );
 }
+
+App.getInitalProps = async ({ ctx }) => {
+
+    const storyTopics = await getStoryTopics();
+
+    return {
+        appProps: {
+            storyTopics
+        }
+    }
+};
 
 export default App;

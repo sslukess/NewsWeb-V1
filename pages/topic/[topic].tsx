@@ -29,7 +29,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
         paths,
         fallback: 'blocking',
     };
-
 }
 
 // Server side render the page on request as the content is dynamic
