@@ -55,7 +55,6 @@ function SiteHeaderBar() {
             <HeaderElement>
                 <Form>
                     <InputGroup>
-                        {/* <InputGroup.Text>search</InputGroup.Text> */}
                         <Form.Control type="text" placeholder='search' />
                     </InputGroup>
                 </Form>

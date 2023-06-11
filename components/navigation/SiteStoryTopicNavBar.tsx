@@ -29,7 +29,7 @@ export function BasicStoryTopicTags({ tags }) {
     return (
         tags.map((tag) => (
 
-            <TopicNavBarStoryTag>
+            <TopicNavBarStoryTag key={tags.indexOf(tag)}>
                 {tag}
             </TopicNavBarStoryTag>
         ))

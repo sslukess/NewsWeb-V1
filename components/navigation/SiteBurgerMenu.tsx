@@ -1,8 +1,8 @@
 'use client'
 
 import { slide as Menu } from 'react-burger-menu'
-import { placeholderTags } from './TestingDataTags'
 import styled from 'styled-components'
+import convertTopicsToLinks from '../../utils/story-utils/ConvertTopicsToLinks';
 
 // Import Components
 import { SearchBar } from '../component-building-blocks/ComponentBuildingBlockIndex'
@@ -15,10 +15,6 @@ import useSizeSize from '../../utils/custom-hooks/useScreenSize';
 const SearchBarDiv = styled.div`
 padding: 5px;
 `;
-
-// styled.div`
-//     padding: 5px;
-// `;
 
 // Story Tag Div
 const StoryTagDiv = styled.div`
@@ -40,9 +36,15 @@ const HamburgerMenu = ({ children }) => {
     )
 }
 
-const HamburgerMenuWithItems = () => {
+const HamburgerMenuWithItems = ({topics}) => {
 
     const screenSize = useSizeSize();
+
+        // pull link from the tags
+
+        const tagLinks = convertTopicsToLinks(topics);
+
+        const tagsJustLinks = tagLinks.map((tag) => tag.link);
 
     return (
         <>
@@ -51,8 +53,8 @@ const HamburgerMenuWithItems = () => {
                     <SearchBarDiv>
                         <SearchBar />
                     </SearchBarDiv>
-                    {placeholderTags.map((tag) => (
-                        <StoryTagDiv>
+                    {tagsJustLinks.map((tag) => (
+                        <StoryTagDiv key={tagsJustLinks.indexOf(tag)}>
                             {tag}
                         </StoryTagDiv>
                     ))}

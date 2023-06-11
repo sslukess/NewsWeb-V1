@@ -30,6 +30,8 @@ const IntroBlock = styled.div`
     border-radius: 2px;
     padding: 20px;
     background-color: ${theme.colors.primary};
+    color: ${theme.text.colors.light};
+;
 
 
     ${breakpoint.up(breakpointSizes.md)` {

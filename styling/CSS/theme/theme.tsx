@@ -7,6 +7,7 @@ const theme = {
         colors: {
             primary: 'black',
             light: '#ededed',
+            linkHover: '#9292b5'
         },
     },
 };

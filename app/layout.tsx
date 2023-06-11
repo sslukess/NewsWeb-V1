@@ -50,7 +50,7 @@ const RootLayout = async ({ children }) => {
 
 
                             {/* Site Burger Menu */}
-                            <SiteBurgerMenu />
+                            <SiteBurgerMenu topics={topics} />
 
                             {/* Main App */}
                             <main className={robotoSlab.className} style={{color: theme.text.colors.primary}} >
