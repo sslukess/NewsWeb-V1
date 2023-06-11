@@ -6,7 +6,7 @@ import { getPhotoWithSize } from '../../utils/story-utils/GetPhotoWithSize';
 import { NormalisedStory } from '../../types/index.d';
 
 
-const getLatestStories = async (n) => {
+const getLatestStories = async (n = Infinity) => {
 
     const LATEST_STORIES_QUERY = gql`
         ${FRAGMENT_STORY_CONTENT}    

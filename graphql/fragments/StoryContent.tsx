@@ -15,6 +15,7 @@ fragment StoryElements on StoryCollection {
         url
       }
       slug
+      storyTopics
   }
 }
 `
