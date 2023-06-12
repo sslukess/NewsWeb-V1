@@ -71,7 +71,7 @@ const CategoryPage = async ({params}) => {
     return (
         <>
 
-            <div>
+            <div className={'container'}>
                 <h1>{topicToGet}</h1>
             </div>
 
