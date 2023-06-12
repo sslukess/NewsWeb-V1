@@ -38,8 +38,6 @@ const getStoryContents = async ( params ) => {
 // StoryPage component
 const StoryPage = async ({ params }) => {
 
-    console.log(params);
-
     // get the story data
     const story = await getStoryContents( params );
 
