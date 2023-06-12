@@ -1,15 +1,6 @@
 // styled components theme provider
 import theme from '../styling/CSS/theme/theme'
-
 import StyledComponentsRegistry from '../styling/styled-components/registry'
-
-// Bootstrap things
-// import SSRProvider from 'react-bootstrap/SSRProvider';
-// import Form from 'react-bootstrap/Form';
-// import InputGroup from 'react-bootstrap/InputGroup';
-
-// // Break points
-// import useSizeSize from '../utils/custom-hooks/useScreenSize';
 
 //CSS Imports
 import '../styling/CSS/reset.css'
