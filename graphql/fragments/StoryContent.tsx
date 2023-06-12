@@ -16,6 +16,8 @@ fragment StoryElements on StoryCollection {
       }
       slug
       storyTopics
+      storyDate
+      author
   }
 }
 `

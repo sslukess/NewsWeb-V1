@@ -50,6 +50,9 @@ const defaultRawStory: RawStory = {
         url: '',
     },
     slug: '/', // route back to home. This is a default value to prevent errors
+    topics: [],
+    storyDate: '',
+    author: '',
 }
 
 
@@ -64,6 +67,9 @@ const mapRawResponseToStoryObject = (data: any) => {
             url: '',
         },
         slug: '',
+        topics: [],
+        storyDate: '',
+        author: '',
     };
 
     // get the data for the story page, (note this is with with defaults in place.)
@@ -72,7 +78,11 @@ const mapRawResponseToStoryObject = (data: any) => {
         storyText = defaultRawStory.storyText,
         storySummary = defaultRawStory.storySummary,
         storyPhoto = defaultRawStory.storyPhoto,
-        slug = defaultRawStory.slug } = data;
+        slug = defaultRawStory.slug,
+        topics = defaultRawStory.topics, 
+        storyDate = defaultRawStory.storyDate,
+        author = defaultRawStory.author 
+        } = data;
 
     // Convert the storyText and storySummary Rich Text json to JSXs
     // Note extra check for null as the Rich Text entry can have a null value itself. 
@@ -92,7 +102,12 @@ const mapRawResponseToStoryObject = (data: any) => {
         url: storyPhotoURL,
     };
     normalisedStory.slug = slug;
+    normalisedStory.topics = topics;
+    normalisedStory.author = author;
 
+    // Date 
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    normalisedStory.storyDate = new Date(storyDate).toLocaleDateString('en-AU', options as any);
 
     return normalisedStory;
 }

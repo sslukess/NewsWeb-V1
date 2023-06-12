@@ -32,8 +32,7 @@ const getStoriesFromTopic = async ( topicToGet: string ): Promise<RawStory[]> =>
     });
 
     const stories: RawStory[] = data.storyCollection.items;
-
-    console.log('all returned stories', stories);
+    
     // filter the stories for the topic
     const storiesFromTopic = stories.filter((story) => {
 

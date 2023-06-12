@@ -17,7 +17,7 @@ interface MapStoriesToCardsProps {
 // loading component
 const Loading = () => <div>loading...</div>; 
 
-const MapStoriesToCards = ({stories, md = 4, sm = 12}: MapStoriesToCardsProps) => {
+const MapStoriesToCards = ({stories, md = 8, sm = 12}: MapStoriesToCardsProps) => {
 
     return (
         <Suspense fallback={<Loading />}>
@@ -34,6 +34,8 @@ const MapStoriesToCards = ({stories, md = 4, sm = 12}: MapStoriesToCardsProps) =
                                 cardTitle={story.storyTitle}
                                 cardCopy={story.storySummary}
                                 buttonCopy={"Read Story"}
+                                date={story.storyDate}
+                                author={story.author}
                                 link={`/story/${story.slug}`}
                             />
                         </Col>)

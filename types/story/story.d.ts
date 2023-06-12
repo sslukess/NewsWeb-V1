@@ -10,6 +10,9 @@ export interface NormalisedStory {
         url: string;
     };
     slug: string;
+    topics: string[];
+    storyDate: string;
+    author: string;
 }
 
 // Placeholder for raw story data, helps to differentiate between raw and normalised data

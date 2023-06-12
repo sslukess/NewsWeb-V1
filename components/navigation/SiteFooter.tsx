@@ -18,7 +18,7 @@ export default function Footer() {
             <div className="px-md-3 px-sm-2">
                 <i className="d-none d-md-inline">The Local Bulletin</i>
             </div>
-            <div className="px-md-3 px-sm-2">Western Suburbs</div>
+            <div className="px-md-3 px-sm-2">Brisbane West</div>
         </StyledFooter>
 
     )
