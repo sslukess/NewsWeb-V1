@@ -19,13 +19,7 @@ padding: 5px;
 // Story Tag Div
 const StoryTagDiv = styled.div`
     padding: 5px;
-    color: red;
 `;
-
-// styled.div`
-//     padding: 5px;
-//     color: red;
-// `;
 
 const HamburgerMenu = ({ children }) => {
 

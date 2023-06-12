@@ -4,6 +4,8 @@ import { BasicCard } from "../atoms/AtomComponentIndex";
 import { Col, Row, Container } from "react-bootstrap";
 import { NormalisedStory } from "../../../types/index.d";
 
+import { Suspense } from "react";
+
 // === Types and Interfaces ===
 
 interface MapStoriesToCardsProps {
@@ -12,10 +14,13 @@ interface MapStoriesToCardsProps {
     sm?: number
 }
 
+// loading component
+const Loading = () => <div>loading...</div>; 
+
 const MapStoriesToCards = ({stories, md = 4, sm = 12}: MapStoriesToCardsProps) => {
 
     return (
-        <>
+        <Suspense fallback={<Loading />}>
             <Container>
                 <Row>
                     {stories.map((story) => {
@@ -35,7 +40,8 @@ const MapStoriesToCards = ({stories, md = 4, sm = 12}: MapStoriesToCardsProps) =
                     })}
                 </Row>
             </Container>
-        </>)
+            </Suspense>
+        )
 };
 
 export default MapStoriesToCards;

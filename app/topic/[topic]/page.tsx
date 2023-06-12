@@ -5,11 +5,9 @@ import apolloClient from '../../../graphql/Client'
 import { ALL_STORIES_QUERY } from '../../../graphql/queries/AllStories'
 
 // Components
-import JustInStoriesSection from '../../../components/partial-pages/JustInStories';
-import Container from 'react-bootstrap/Container';
+import JustInStoriesSection from '../../just-in/components/JustInStories';
 
 import getStoryTopics from "../../../utils/story-utils/GetStoryTopics";
-import slugify from "slugify";
 
 
 // -- Generate the page paths for each story category 
@@ -27,7 +25,6 @@ export const generateStaticParams = async () => {
     return paths;
 }
 
-// Server side render the page on request as the content is dynamic
 const getStoriesFromTopic = async ( topicToGet: string ): Promise<RawStory[]> => {
 
     const { data } = await apolloClient.query({
@@ -54,9 +51,6 @@ const getStoriesFromTopic = async ( topicToGet: string ): Promise<RawStory[]> =>
 
         return false;
     });
-
-    // Console log filtered stories 
-    console.log('stories from topic', storiesFromTopic);
    
     return storiesFromTopic;
 }
