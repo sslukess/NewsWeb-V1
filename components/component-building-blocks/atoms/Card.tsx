@@ -1,9 +1,12 @@
 'use client'
 
+// Components
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import styled from 'styled-components';
-import Image from 'next/image';
+
+// Hooks
+import useScreenSize from '../../../utils/custom-hooks/useScreenSize';
 
 import { getPhotoWithSize } from '../../../utils/story-utils/GetPhotoWithSize';
 
@@ -74,7 +77,7 @@ const TextWrapper = styled.div`
     flex: 2 1 auto;
 `;
 
-const AuthorWrapper = styled.div`
+const ButtonWrapper = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -93,6 +96,8 @@ function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy, date, author, onCl
 
   // add sizing parameters to send to contentful: 
   const resizedImgSrc = getPhotoWithSize(imgSrc, null, 180);
+
+  const screenSize = useScreenSize();
 
   return (
     // <StyledCard >
@@ -118,9 +123,14 @@ function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy, date, author, onCl
         <p>{date} - {author}</p>
         <StyledLink href={link}><h3>{cardTitle}</h3></StyledLink>
         {cardCopy}
-        <AuthorWrapper>
-          <Button variant="primary" onClick={onClick} href={link}>{buttonCopy}</Button>
-        </AuthorWrapper>
+
+        {!screenSize.isTabletOrMobile &&
+          <ButtonWrapper>
+            <Button variant="primary" onClick={onClick} href={link}>{buttonCopy}</Button>
+          </ButtonWrapper>
+        }
+
+
       </TextWrapper>
     </StoryCardWrapper>
 
