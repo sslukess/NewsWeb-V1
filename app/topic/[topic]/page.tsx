@@ -57,7 +57,9 @@ const getStoriesFromTopic = async ( topicToGet: string ): Promise<RawStory[]> =>
 
 const CategoryPage = async ({params}) => {
 
-    const topicToGet = params.topic;
+    const topicToGet = params?.topic.toLowerCase();
+
+    if (!topicToGet) return; // return if the topic is null
 
     const stories: RawStory[] = await getStoriesFromTopic(topicToGet);
 
