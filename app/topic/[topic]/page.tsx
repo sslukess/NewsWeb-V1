@@ -57,7 +57,8 @@ const getStoriesFromTopic = async ( topicToGet: string ): Promise<RawStory[]> =>
 
 const CategoryPage = async ({params}) => {
 
-    const topicToGet = params?.topic.toLowerCase();
+    const upperCaseTopic = params?.topic; // for some reason, browsers push the param with uppercase first Char. 
+    const topicToGet = params?.topic.toLowerCase(); // lowercase
 
     if (!topicToGet) return; // return if the topic is null
 
@@ -73,7 +74,7 @@ const CategoryPage = async ({params}) => {
         <>
 
             <div className={'container'}>
-                <h1>{topicToGet}</h1>
+                <h1>{upperCaseTopic}</h1>
             </div>
 
             <JustInStoriesSection stories={cleanedStories}/>
