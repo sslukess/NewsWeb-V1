@@ -1,6 +1,10 @@
 import apolloClient from '../../../graphql/Client'
 import { ALL_STORIES_QUERY } from '../../../graphql/queries/AllStories'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import mapRawResponseToStoryObject from '../../../graphql/data-mapping/StoryDataMapping';
+import { NormalisedStory } from '../../../types/index.d';
+
+// Components
+import StoryPageStructure from './components/story-structure'
 
 // disable all routes not returned from generateStaticParams
 export const dynamicParams = false;
@@ -39,25 +43,17 @@ const getStoryContents = async ( params ) => {
 const StoryPage = async ({ params }) => {
 
     // get the story data
-    const story = await getStoryContents( params );
+    const dirtyStory = await getStoryContents( params );
+    const cleanStory: NormalisedStory = mapRawResponseToStoryObject(dirtyStory); // clean it
 
     // get the data for the story page
-    const {storyTitle, storyText, storyPhoto } = story;
-
-    // if there is missing data, 
-
-    // Convert the storyText Rich Text json to JSX
-    const StoryTextJSX = documentToReactComponents(storyText.json);
+    const {storyTitle, storyBody, storyPhoto, author, storyDate } = cleanStory;
 
     // pull the image URL 
-    const storyPhotoURL = `${storyPhoto.url}?w=200`;
+    const storyPhotoURL = `${storyPhoto.url}?w=400`;
 
     return (
-        <div>
-            <h1>{storyTitle}</h1>
-            <img src={storyPhotoURL}/>
-            {StoryTextJSX}
-        </div>
+        <StoryPageStructure storyTitle={storyTitle} storyBody={storyBody} storyPhotoURL={storyPhotoURL} author={author} storyDate={storyDate} />
     )
 }
 
