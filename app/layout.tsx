@@ -27,11 +27,10 @@ import convertTopicsToLinks from '../utils/story-utils/ConvertTopicsToLinks';
 const RootLayout = async ({ children }) => {
 
     const topics = await getStoryTopics();
-    // console.log(topics);
 
     return (
         <>
-            <html>
+            <html className={robotoSlab.className}>
                 <head>
                     <title>My page</title>
                 </head>
@@ -44,7 +43,7 @@ const RootLayout = async ({ children }) => {
                             <SiteBurgerMenu topics={topics} />
 
                             {/* Main App */}
-                            <main className={robotoSlab.className} style={{color: theme.text.colors.primary}} >
+                            <main  style={{color: theme.text.colors.primary}} >
                                 <SiteHeader topics={topics} />
                                 <section>
                                     {children}
