@@ -5,10 +5,11 @@ import styled from 'styled-components';
 import useScreenSize from '../../utils/custom-hooks/useScreenSize';
 import StoryTopicNavBar from './SiteStoryTopicNavBar';
 import theme from '../../styling/CSS/theme/theme';
+import { useRouter } from 'next/navigation'
 
 // === STYLES ===
 
-// Header container 
+// Header container
 
 const HeaderContainer = styled(Container)`
     background-color: ${theme.colors.primary};
@@ -18,6 +19,7 @@ const HeaderContainer = styled(Container)`
     align-items: end;
     padding: 0;
     border-bottom: 1px solid ${theme.colors.secondary};
+    cursor: pointer;
 `;
 
 // Header element 
@@ -40,9 +42,10 @@ const LogoImg = styled.img`
 function SiteHeaderBar() {
 
     const screenSize = useScreenSize();
+    const router = useRouter(); 
 
     return (
-        <HeaderContainer fluid>
+        <HeaderContainer onClick={() => router.push('/')} fluid>
             <HeaderElement>
                 <LogoWrapper>
                     <LogoImg src="/slim-logo.png" alt="logo" />
