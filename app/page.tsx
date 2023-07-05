@@ -3,10 +3,7 @@ import { HeroPanel, FrontPgLeadStories } from '../components/index';
 import getLatestStories from '../graphql/query-functions/LatestStories';
 import { NormalisedStory } from '../types/index.d';
 import mapRawResponseToStoryObject from '../graphql/data-mapping/StoryDataMapping';
-import { getPhotoWithSize } from '../utils/story-utils/GetPhotoWithSize';
-
-
-
+import LeadStory from './page-components/leadStory'
 
 async function HomePage(props) {
 
@@ -24,12 +21,13 @@ async function HomePage(props) {
         <>
 
             <HeroPanel
-                imgSrc={'/hero-wallpaper.jpg'}
+                imgSrc={'/news-wallpaper.jpg'}
                 headingCopy={'Local News, Local First'}
                 paragraphCopy={'The Local Bulletin is the premier source for local news in the Western Suburbs of Brisbane.'}
                 buttonCopy={'Latest News'}
             />
 
+            <LeadStory rawStory={latestStories[0]} />
 
             <FrontPgLeadStories stories={cleanedStories} />
 
@@ -37,16 +35,5 @@ async function HomePage(props) {
 
     )
 }
-
-// export async function getServerSideProps() {
-
-//   const latestStories = await getLatestStories(3);
-
-//   return {
-//     props: {
-//       latestStories: latestStories,
-//     }, // will be passed to the page component as props
-//   }
-// }
 
 export default HomePage;
