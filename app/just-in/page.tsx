@@ -24,9 +24,7 @@ const JustInPage = async (props) => {
 
     return (
         <>
-
-
-                <h1>Just In</h1>
+            <h1>Just In</h1>
 
             <JustInStoriesSection stories={cleanedStories} />
 

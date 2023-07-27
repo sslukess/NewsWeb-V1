@@ -17,8 +17,6 @@ import { NormalisedStory } from '../../types/index.d';
 // -- COMPONENTS --
 const StoryContainer = styled(Container)`
     width: 100%;
-    height: 400px;
-    background-color: ${theme.colors.grey}
 `;
 
 const StoryImage = styled(Image)`
@@ -28,7 +26,6 @@ const StoryImage = styled(Image)`
 const StoryImageWrapper = styled.div`
     position: relative !important;
     height: 300px;
-
 `
 
 const StoryHeading = styled.h1`
@@ -40,7 +37,6 @@ const StoryByLine = styled.p`
 `
 
 const StoryText = styled.div`
-
 `
 
 const LeadStory = ({ rawStory }) => {

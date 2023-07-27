@@ -3,7 +3,7 @@ import { HeroPanel, FrontPgLeadStories } from '../components/index';
 import getLatestStories from '../graphql/query-functions/LatestStories';
 import { NormalisedStory } from '../types/index.d';
 import mapRawResponseToStoryObject from '../graphql/data-mapping/StoryDataMapping';
-import LeadStory from './page-components/leadStory'
+import LeadStory from './components/leadStory'
 
 async function HomePage(props) {
 
