@@ -7,8 +7,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
-import { breakpoint, breakpointSizes } from '../../styling/style-mix-ins/CssBreakpoints';
-
 const HeroWrapper = styled.div`
     display: flex;
     justify-content: end;
@@ -18,7 +16,7 @@ const HeroWrapper = styled.div`
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 40px 60px;
+    padding: 12px 60px;
     margin-bottom: 20px;
 `;
 
@@ -31,20 +29,16 @@ const IntroBlock = styled.div`
     padding: 20px;
     background-color: ${theme.colors.primary};
     color: ${theme.text.colors.light};
-;
+`
 
-
-    ${breakpoint.up(breakpointSizes.md)` {
-        width: 80%;
-        `}
-`;
-
-const IntroBlockWrapper = styled.div`
-${breakpoint.up(breakpointSizes.md)` {
+const ParagraphAndButton = styled.div`
     display: flex;
-    justify-content: end;
-    `}
-    `;
+    justify-content: space-between;
+`
+
+const HeroButton = styled(Button)`
+    align-self: end;
+`
 
 // === Compoenents ===
 
@@ -60,12 +54,6 @@ const Paragraph = ({ copy }) => {
     )
 }
 
-const HeroButton = ({ copy, href }) => {
-    return (
-        <Button href={href}>{copy}</Button>
-    )
-}
-
 
 const HeroPanel = ({ imgSrc, headingCopy, paragraphCopy, buttonCopy }) => {
     return (
@@ -73,16 +61,15 @@ const HeroPanel = ({ imgSrc, headingCopy, paragraphCopy, buttonCopy }) => {
             <Container
                 fluid >
                 <Row>
-                    <Col md={6}>
-                        <IntroBlockWrapper>
+                    <Col>
                             <IntroBlock>
                                 <Heading copy={headingCopy} />
-                                <div> <Paragraph copy={paragraphCopy} /> <HeroButton copy={buttonCopy} href={'/just-in'} /> </div>
+                                <Paragraph copy={paragraphCopy} /> <HeroButton te={buttonCopy} href={'/just-in'}>{buttonCopy}</HeroButton>
+                                
                             </IntroBlock>
-                        </IntroBlockWrapper>
 
                     </Col>
-                    <Col md>&nbsp;</Col>
+                    {/* <Col >&nbsp;</Col> */}
                 </Row>
             </Container>
         </HeroWrapper>
