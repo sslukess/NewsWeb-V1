@@ -12,7 +12,9 @@ const getLatestStories = async (n = Infinity) => {
         ${FRAGMENT_STORY_CONTENT}    
         query LatestStories {
             storyCollection(limit: ${n}) {
-                ...StoryElements
+                items {
+                    ...StoryElements
+                }
             }
         }
     `;

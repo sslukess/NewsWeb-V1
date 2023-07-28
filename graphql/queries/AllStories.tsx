@@ -6,7 +6,9 @@ export const ALL_STORIES_QUERY = gql`
     ${FRAGMENT_STORY_CONTENT}
     query AllStories {
         storyCollection {
+            items{
             ...StoryElements
+            }
         }
     }
 `
