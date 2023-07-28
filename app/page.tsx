@@ -21,7 +21,7 @@ async function HomePage(props) {
         <>
 
             <HeroPanel
-                imgSrc={'/news-wallpaper.jpg'}
+                imgSrc={''}
                 headingCopy={'Local News, Local First'}
                 paragraphCopy={'The Local Bulletin is the premier source for local news in the Western Suburbs of Brisbane.'}
                 buttonCopy={'Latest News'}
