@@ -35,7 +35,7 @@ const StoryCardWrapper = styled(Container)`
     align-items: flex-start;
 `;
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled(StyledLink)`
     display: flex;
     justify-content: center;
     align-items: top;
@@ -116,7 +116,8 @@ function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy, date, author, onCl
         </StyledCol>
 
         <StyledCol md={4}>
-          <ImageWrapper>
+          <ImageWrapper
+          href={link}>
             <StyledImg src={resizedImgSrc} alt='story picture' width={'auto'} height={180} />
           </ImageWrapper>
         </StyledCol>

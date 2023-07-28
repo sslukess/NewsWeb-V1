@@ -60,11 +60,14 @@ const LeadStory = ({ rawStory }) => {
 
                     <Col xs={{ order: 'first' }} md={{ order: 'last' }} >
                         <StoryImageWrapper>
-                            <StoryImage
-                                src={`${storyPhoto.url}`}
-                                fill={true}
-                                alt={'XXX'}
+                            <StyledLink
+                                href={`story/${slug}`}>
+                                <StoryImage
+                                    src={`${storyPhoto.url}`}
+                                    fill={true}
+                                    alt={'XXX'}
                                 />
+                            </StyledLink>
                         </StoryImageWrapper>
                     </Col>
                 </Row>
