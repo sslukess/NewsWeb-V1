@@ -1,10 +1,9 @@
-import getLatestStories from "../../graphql/query-functions/LatestStories";
-import { RawStory, NormalisedStory } from "../../types/index.d";
-import mapRawResponseToStoryObject from "../../graphql/data-mapping/StoryDataMapping";
+import getLatestStories from "../../../graphql/query-functions/LatestStories";
+import { RawStory, NormalisedStory } from "../../../types/index.d";
+import mapRawResponseToStoryObject from "../../../graphql/data-mapping/StoryDataMapping";
 
 // Components
-import JustInStoriesSection from './components/JustInStories';
-import Container from 'react-bootstrap/Container';
+import TopicPageMainContent from '../components/TopicPageMainContent';
 
 const getStoriesForPage = async (limit: number) => {
     const stories: RawStory[] = await getLatestStories(limit);
@@ -23,12 +22,9 @@ const JustInPage = async (props) => {
     });
 
     return (
-        <>
-            <h1>Just In</h1>
+            
+            <TopicPageMainContent stories={cleanedStories} pageHeading={'Just In'} />
 
-            <JustInStoriesSection stories={cleanedStories} />
-
-        </>
     );
 };
 
