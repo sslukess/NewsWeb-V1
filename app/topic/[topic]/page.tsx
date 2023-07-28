@@ -5,9 +5,9 @@ import apolloClient from '../../../graphql/Client'
 import { ALL_STORIES_QUERY } from '../../../graphql/queries/AllStories'
 
 // Components
-import JustInStoriesSection from '../../just-in/components/JustInStories';
-
+import TopicPageMainContent from '../components/TopicPageMainContent';
 import getStoryTopics from "../../../utils/story-utils/GetStoryTopics";
+import Container from "react-bootstrap/Container";
 
 
 // -- Generate the page paths for each story category 
@@ -71,15 +71,8 @@ const CategoryPage = async ({params}) => {
     });
 
     return (
-        <>
 
-            <div className={'container'}>
-                <h1>{upperCaseTopic}</h1>
-            </div>
-
-            <JustInStoriesSection stories={cleanedStories}/>
-
-        </>
+        <TopicPageMainContent stories={cleanedStories} pageHeading={upperCaseTopic}/>
     );
 };
 

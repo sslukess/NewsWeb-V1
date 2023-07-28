@@ -68,7 +68,7 @@ const HeroPanel = ({ imgSrc, headingCopy, paragraphCopy, buttonCopy }) => {
                     <Col>
                             <IntroBlock>
                                 <Heading copy={headingCopy} />
-                                <Paragraph copy={paragraphCopy} /> <HeroButton te={buttonCopy} href={'/just-in'}>{buttonCopy}</HeroButton>
+                                <Paragraph copy={paragraphCopy} /> <HeroButton te={buttonCopy} href={'/topic/just-in'}>{buttonCopy}</HeroButton>
                                 
                             </IntroBlock>
 
