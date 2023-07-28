@@ -24,6 +24,9 @@ import convertTopicsToLinks from '../utils/story-utils/ConvertTopicsToLinks';
 
 // === End Imports ===
 
+// get site name from env
+const siteName = process.env.NEXT_PUBLIC_SITE_NAME ?? 'News';
+
 const RootLayout = async ({ children }) => {
 
     const topics = await getStoryTopics();
@@ -32,7 +35,7 @@ const RootLayout = async ({ children }) => {
         <>
             <html className={robotoSlab.className}>
                 <head>
-                    <title>My page</title>
+                    <title>{siteName}</title>
                 </head>
                 <body>
                     <StyledComponentsRegistry>
