@@ -1,10 +1,6 @@
-
-
-
 'use client'
 
 import styled from 'styled-components';
-import theme from '../../styling/CSS/theme/theme';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -13,10 +9,15 @@ import Image from 'next/image'
 
 import mapRawResponseToStoryObject from '../../graphql/data-mapping/StoryDataMapping';
 import { NormalisedStory } from '../../types/index.d';
+import { breakpoint, breakpointSizes } from '../../styling/style-mix-ins/CssBreakpoints';
 
 // -- COMPONENTS --
 const StoryContainer = styled(Container)`
-    width: 100%;
+        
+    ${breakpoint.up(breakpointSizes.lg)`
+            padding: 12px 60px;
+    `}
+
 `;
 
 const StoryImage = styled(Image)`
@@ -26,6 +27,7 @@ const StoryImage = styled(Image)`
 const StoryImageWrapper = styled.div`
     position: relative !important;
     height: 300px;
+   
 `
 
 const StoryHeading = styled.h1`
@@ -47,15 +49,15 @@ const LeadStory = ({ rawStory }) => {
 
     return (
         <Suspense fallback={<div>... Loading</div>}>
-            <StoryContainer>
+            <StoryContainer fluid>
                 <Row>
-                    <Col md={6} sm>
+                    <Col md lg={6}>
                         <StoryHeading>{storyTitle}</StoryHeading>
                         <StoryByLine>{storyDate} - {author}</StoryByLine>
                         <StoryText>{storySummary}</StoryText>
                     </Col>
 
-                    <Col xs={{ order: 'first' }} sm={{ order: 'last' }}>
+                    <Col xs={{ order: 'first' }} md={{ order: 'last' }} >
                         <StoryImageWrapper>
                             <StoryImage
                                 src={`${storyPhoto.url}`}

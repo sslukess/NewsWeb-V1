@@ -6,18 +6,23 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { breakpoint, breakpointSizes } from '../../styling/style-mix-ins/CssBreakpoints';
 
-const HeroWrapper = styled.div`
-    display: flex;
-    justify-content: end;
-    width: 100%;
-    height: auto; 
-    background-image: url(${({ backgroundImage }) => backgroundImage});
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 12px 60px;
-    margin-bottom: 20px;
+const HeroWrapper = styled(Container)`
+    // display: flex;
+    // justify-content: end;
+    // width: 100%;
+    // height: auto; 
+    // background-image: url(${({ backgroundImage }) => backgroundImage});
+    // background-size: cover;
+    // background-position: center;
+    // background-repeat: no-repeat;
+
+    padding: 12px;
+    
+    ${breakpoint.up(breakpointSizes.lg)`
+            padding: 12px 60px;
+    `}
 `;
 
 const IntroBlock = styled.div`
@@ -57,9 +62,8 @@ const Paragraph = ({ copy }) => {
 
 const HeroPanel = ({ imgSrc, headingCopy, paragraphCopy, buttonCopy }) => {
     return (
-        <HeroWrapper backgroundImage={imgSrc}>
-            <Container
-                fluid >
+        <HeroWrapper backgroundImage={imgSrc} fluid >
+
                 <Row>
                     <Col>
                             <IntroBlock>
@@ -71,7 +75,7 @@ const HeroPanel = ({ imgSrc, headingCopy, paragraphCopy, buttonCopy }) => {
                     </Col>
                     {/* <Col >&nbsp;</Col> */}
                 </Row>
-            </Container>
+
         </HeroWrapper>
     );
 };
