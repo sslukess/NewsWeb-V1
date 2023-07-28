@@ -19,7 +19,6 @@ const StyledContainer = styled(Container)`
 `;
 
 const StyledHeading = styled.h1`
-    font-size: 4rem;
     text-decoration: underline;
 `;
 
