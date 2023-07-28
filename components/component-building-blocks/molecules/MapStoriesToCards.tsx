@@ -3,8 +3,10 @@
 import { BasicCard } from "../atoms/AtomComponentIndex";
 import { Col, Row, Container } from "react-bootstrap";
 import { NormalisedStory } from "../../../types/index.d";
+import { breakpoint, breakpointSizes } from "../../../styling/style-mix-ins/CssBreakpoints";
 
 import { Suspense } from "react";
+import styled from "styled-components";
 
 // === Types and Interfaces ===
 
@@ -14,6 +16,14 @@ interface MapStoriesToCardsProps {
     sm?: number
 }
 
+// styled container with padding and margin for wrapper 
+
+const CardRowWrapper = styled(Container)`
+${breakpoint.up(breakpointSizes.lg)`
+padding: 12px 60px;
+`}
+`;
+
 // loading component
 const Loading = () => <div>loading...</div>; 
 
@@ -21,7 +31,7 @@ const MapStoriesToCards = ({stories, md = 8, sm = 12}: MapStoriesToCardsProps) =
 
     return (
         <Suspense fallback={<Loading />}>
-            <Container>
+            <CardRowWrapper fluid>
                 <Row>
                     {stories.map((story) => {
                         return (<Col
@@ -41,7 +51,7 @@ const MapStoriesToCards = ({stories, md = 8, sm = 12}: MapStoriesToCardsProps) =
                         </Col>)
                     })}
                 </Row>
-            </Container>
+            </CardRowWrapper>
             </Suspense>
         )
 };
