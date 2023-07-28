@@ -39,9 +39,11 @@ export function BasicStoryTopicTags({ tags }) {
 
 function StoryTopicNavBar({ topics }) {
 
-    // pull link from the tags
+    // just in static tag
+    const justInTag = convertTopicsToLinks(['Just In']);
 
-    const tagLinks = convertTopicsToLinks(topics);
+    // concatenate the links from the tags (these come from contentful)
+    const tagLinks = justInTag.concat(convertTopicsToLinks(topics));
 
     const tagsJustLinks = tagLinks.map((tag) => tag.link);
 
