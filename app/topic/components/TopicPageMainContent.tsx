@@ -1,11 +1,27 @@
 'use client'
 
+import styled from 'styled-components';
+import { breakpoint, breakpointSizes } from '../../../styling/style-mix-ins/CssBreakpoints';
+
 // Types
 import { NormalisedStory } from "../../../types/index.d";
 
 //components 
 import { MapStoriesToCards } from '../../../components/component-building-blocks/ComponentBuildingBlockIndex';
 import Container from 'react-bootstrap/Container';
+
+// Styled 
+
+const StyledContainer = styled(Container)`
+    ${breakpoint.up(breakpointSizes.lg)`
+    padding: 12px 60px;
+    `}
+`;
+
+const StyledHeading = styled.h1`
+    font-size: 4rem;
+    text-decoration: underline;
+`;
 
 const TopicPageMainContent = (props) => {
 
@@ -16,9 +32,9 @@ const TopicPageMainContent = (props) => {
     return (
 
         <>
-            <Container>
-                <h1>{pageHeading}</h1>
-            </Container>
+            <StyledContainer fluid>
+                <StyledHeading>{pageHeading}</StyledHeading>
+            </StyledContainer>
 
             <MapStoriesToCards stories={stories} />
         </>

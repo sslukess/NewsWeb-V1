@@ -8,7 +8,8 @@ const theme = {
         colors: {
             primary: 'black',
             light: '#ededed',
-            linkHover: '#9292b5'
+            linkHover: '#5f5f7d',
+            linkColor: '#00275a',
         },
     },
 };

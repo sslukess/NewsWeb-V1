@@ -3,7 +3,8 @@ import * as moleculeComponentsIndex from "./molecules/MoleculeComponentsIndex";
 
 // Getting all atoms 
 const { 
-    BasicCard
+    BasicCard,
+    StyledLink
 } = atomComponentIndex;
 
 // Getting all molecules
@@ -16,6 +17,7 @@ const {
 export {
     // ATOMS
     BasicCard,
+    StyledLink,
     // MOLECULES
     MapStoriesToCards,
     SearchBar

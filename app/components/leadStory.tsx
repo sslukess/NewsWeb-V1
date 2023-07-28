@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Suspense } from 'react';
 import Image from 'next/image'
+import { StyledLink } from '../../components/component-building-blocks/ComponentBuildingBlockIndex'
 
 import mapRawResponseToStoryObject from '../../graphql/data-mapping/StoryDataMapping';
 import { NormalisedStory } from '../../types/index.d';
@@ -45,14 +46,14 @@ const LeadStory = ({ rawStory }) => {
 
     const cleanStory: NormalisedStory = mapRawResponseToStoryObject(rawStory)
 
-    const { storyTitle, storySummary, storyPhoto, author, storyDate } = cleanStory;
+    const { storyTitle, storySummary, storyPhoto, author, storyDate, slug } = cleanStory;
 
     return (
         <Suspense fallback={<div>... Loading</div>}>
             <StoryContainer fluid>
                 <Row>
                     <Col md lg={6}>
-                        <StoryHeading>{storyTitle}</StoryHeading>
+                        <StoryHeading><StyledLink href={`story/${slug}`}>{storyTitle}</StyledLink></StoryHeading>
                         <StoryByLine>{storyDate} - {author}</StoryByLine>
                         <StoryText>{storySummary}</StoryText>
                     </Col>

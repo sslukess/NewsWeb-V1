@@ -23,7 +23,7 @@ const JustInPage = async (props) => {
 
     return (
             
-            <TopicPageMainContent stories={cleanedStories} pageHeading={'Just In'} />
+            <TopicPageMainContent stories={cleanedStories} pageHeading={'Just in'} />
 
     );
 };
