@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import theme from '../../styling/CSS/theme/theme';
 
 const StyledFooter = styled.footer`
-    background-color: ${theme.colors.secondary};
+    background-color: ${theme.colors.primary};
     color: ${theme.text.colors.light};
     padding: 10px;
     width: 100%;
@@ -16,7 +16,7 @@ export default function Footer() {
 
         <StyledFooter className="position-absolute w-100 d-flex justify-content-center justify-content-sm-between align-items-end">
             <div className="px-md-3 px-sm-2">
-                <i className="d-none d-md-inline">The Local Bulletin</i>
+                <i className="d-none d-md-inline">The  Cold Harbour Times</i>
             </div>
             <div className="px-md-3 px-sm-2">Brisbane West</div>
         </StyledFooter>

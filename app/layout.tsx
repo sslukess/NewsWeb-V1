@@ -3,23 +3,16 @@ import theme from '../styling/CSS/theme/theme'
 import StyledComponentsRegistry from '../styling/styled-components/registry'
 
 //CSS Imports
-import '../styling/CSS/reset.css'
+import '../styling/CSS/reset.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styling/CSS/burger-menu.css'
-
-// Font
-import { Roboto_Slab } from 'next/font/google';
-const robotoSlab = Roboto_Slab({
-    subsets: ["latin"],
-    weight: "400"
-})
+import '../styling/CSS/burger-menu.css';
+import '../styling/CSS/global.css';
 
 // importing components
 import { SiteFooter, SiteHeader, SiteBurgerMenu } from '../components/index'
 
 // importing utils 
 import getStoryTopics from '../utils/story-utils/GetStoryTopics';
-import convertTopicsToLinks from '../utils/story-utils/ConvertTopicsToLinks';
 // import { useEffect } from 'react';
 
 // === End Imports ===
@@ -33,30 +26,33 @@ const RootLayout = async ({ children }) => {
 
     return (
         <>
-            <html className={robotoSlab.className}>
+            <html>
                 <head>
                     <title>{siteName}</title>
-                </head>
-                <body>
-                    <StyledComponentsRegistry>
-                        <div id="outer-container">
 
+                    <link rel="preconnect" href="https://fonts.googleapis.com" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" />
+                    <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet" />
+            </head>
+            <body>
+                <StyledComponentsRegistry>
+                    <div id="outer-container">
 
-                            {/* Site Burger Menu */}
-                            <SiteBurgerMenu topics={topics} />
+                        {/* Site Burger Menu */}
+                        <SiteBurgerMenu topics={topics} />
 
-                            {/* Main App */}
-                            <main  style={{color: theme.text.colors.primary}} >
-                                <SiteHeader topics={topics} />
-                                <section>
-                                    {children}
-                                </section>
-                                <SiteFooter />
-                            </main>
-                        </div>
-                    </StyledComponentsRegistry>
-                </body>
-            </html>
+                        {/* Main App */}
+                        <main>
+                            <SiteHeader topics={topics} />
+                            <section>
+                                {children}
+                            </section>
+                            <SiteFooter />
+                        </main>
+                    </div>
+                </StyledComponentsRegistry>
+            </body>
+        </html>
 
         </>
     );

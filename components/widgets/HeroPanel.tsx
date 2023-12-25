@@ -9,15 +9,7 @@ import Button from 'react-bootstrap/Button';
 import { breakpoint, breakpointSizes } from '../../styling/style-mix-ins/CssBreakpoints';
 
 const HeroWrapper = styled(Container)`
-    // display: flex;
-    // justify-content: end;
-    // width: 100%;
-    // height: auto; 
-    // background-image: url(${({ backgroundImage }) => backgroundImage});
-    // background-size: cover;
-    // background-position: center;
-    // background-repeat: no-repeat;
-
+    border-radius: 10px;
     padding: 12px;
     
     ${breakpoint.up(breakpointSizes.lg)`
@@ -30,7 +22,7 @@ const IntroBlock = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    border-radius: 2px;
+    border-radius: 4px;
     padding: 20px;
     background-color: ${theme.colors.primary};
     color: ${theme.text.colors.light};
@@ -45,36 +37,36 @@ const HeroButton = styled(Button)`
     align-self: end;
 `
 
-// === Compoenents ===
+const Heading = styled.h1`
+    color: ${theme.text.colors.primary}
+`;
 
-const Heading = ({ copy }) => {
-    return (
-        <h1>{copy}</h1>
-    )
-}
-
-const Paragraph = ({ copy }) => {
-    return (
-        <p>{copy}</p>
-    )
-}
-
+const Paragraph = styled.p`
+    color: ${theme.text.colors.primary}
+`;
 
 const HeroPanel = ({ imgSrc, headingCopy, paragraphCopy, buttonCopy }) => {
     return (
-        <HeroWrapper backgroundImage={imgSrc} fluid >
+        <HeroWrapper fluid >
 
-                <Row>
-                    <Col>
-                            <IntroBlock>
-                                <Heading copy={headingCopy} />
-                                <Paragraph copy={paragraphCopy} /> <HeroButton variant={'light'} te={buttonCopy} href={'/topic/just-in'}>{buttonCopy}</HeroButton>
-                                
-                            </IntroBlock>
+            <Row>
+                <Col>
+                    <IntroBlock>
+                        <Heading >
+                            {headingCopy}
+                        </Heading>
 
-                    </Col>
-                    {/* <Col >&nbsp;</Col> */}
-                </Row>
+                        <Paragraph>
+                            {paragraphCopy}
+                        </Paragraph>
+
+                        <HeroButton variant={'light'} te={buttonCopy} href={'/topic/just-in'}>{buttonCopy}</HeroButton>
+
+                    </IntroBlock>
+
+                </Col>
+                {/* <Col >&nbsp;</Col> */}
+            </Row>
 
         </HeroWrapper>
     );

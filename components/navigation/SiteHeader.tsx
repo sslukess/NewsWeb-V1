@@ -48,7 +48,7 @@ function SiteHeaderBar() {
         <HeaderContainer onClick={() => router.push('/')} fluid>
             <HeaderElement>
                 <LogoWrapper>
-                    <LogoImg src="/slim-logo.png" alt="logo" />
+                    <LogoImg src="/newLogo.png" alt="logo" />
                 </LogoWrapper>
             </HeaderElement>
 
