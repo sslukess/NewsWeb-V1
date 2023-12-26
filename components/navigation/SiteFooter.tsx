@@ -18,7 +18,7 @@ export default function Footer() {
             <div className="px-md-3 px-sm-2">
                 <i className="d-none d-md-inline">The  Cold Harbour Times</i>
             </div>
-            <div className="px-md-3 px-sm-2">Brisbane West</div>
+            <div className="px-md-3 px-sm-2">© Luke Sampson Searle, 2023</div>
         </StyledFooter>
 
     )
