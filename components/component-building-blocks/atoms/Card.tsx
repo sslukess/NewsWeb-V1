@@ -32,6 +32,7 @@ const StoryCardWrapper = styled(Container)`
     border-top: 0.4px solid black;
     margin: 10px auto;
     height: auto;
+    flex: 1 1 auto;
     align-items: flex-start;
 `;
 
@@ -70,9 +71,14 @@ const ButtonWrapper = styled.div`
 
   `;
 
+const StyledRow = styled(Row)`
+    flex: 1 1 auto;
+`;
+
 const StyledImg = styled.img`
     padding: 10px;
-`
+
+`;
 
 const StyledCol = styled(Col)`
 
@@ -97,10 +103,10 @@ function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy, date, author, onCl
   return (
 
     <StoryCardWrapper fluid>
-      <Row>
+      <StyledRow>
         
 
-        <StyledCol xs={{ order: 'first' }} sm={{ order: 'last' }}>
+        <StyledCol sm={{ order: 'first' }} md={{ order: 'last' }}>
           <TextWrapper>
             <p>{date} - {author}</p>
             <StyledLink href={link}><h3>{cardTitle}</h3></StyledLink>
@@ -122,7 +128,7 @@ function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy, date, author, onCl
           </ImageWrapper>
         </StyledCol>
 
-      </Row>
+      </StyledRow>
     </StoryCardWrapper>
 
   );
