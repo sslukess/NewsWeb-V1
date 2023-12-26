@@ -1,20 +1,19 @@
 const theme = {
     colors: {
-        primary: '#38b6ff',
-        secondary: '#38b6ff',
+        primary: '#198754',
+        secondary: '#198754',
         grey: '#eaeaea',
     },
     text: {
         colors: {
-            primary: '#004aad',
-            light: '#ededed',
+            primary: '#212529',
+            light: '#f3f3f3',
             
-            linkColor: '#004aad',
-            linkHover: '#38b6ff',
+            linkColor: '#212529',
+            linkHover: '#598b73',
         },
     },
 };
-// 5ce1e6 ffde59 
-// 004aad 38b6ff
+// ffbd59  5e17eb
 
 export default theme;

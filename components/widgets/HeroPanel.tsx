@@ -38,11 +38,11 @@ const HeroButton = styled(Button)`
 `
 
 const Heading = styled.h1`
-    color: ${theme.text.colors.primary}
+    color: ${theme.text.colors.light}
 `;
 
 const Paragraph = styled.p`
-    color: ${theme.text.colors.primary}
+    color: ${theme.text.colors.light}
 `;
 
 const HeroPanel = ({ imgSrc, headingCopy, paragraphCopy, buttonCopy }) => {
