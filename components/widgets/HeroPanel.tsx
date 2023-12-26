@@ -22,7 +22,7 @@ const IntroBlock = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    border-radius: 4px;
+    border-radius: 8px;
     padding: 20px;
     background-color: ${theme.colors.primary};
     color: ${theme.text.colors.light};
@@ -65,7 +65,7 @@ const HeroPanel = ({ imgSrc, headingCopy, paragraphCopy, buttonCopy }) => {
                     </IntroBlock>
 
                 </Col>
-                {/* <Col >&nbsp;</Col> */}
+        
             </Row>
 
         </HeroWrapper>
