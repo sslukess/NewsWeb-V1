@@ -1,13 +1,11 @@
 import { getStoriesFromSearchTerm } from '@/graphql/query-functions/getStoryFromSearchTerm'
-import TopicPageMainContent from '../components/TopicPageMainContent';
 import mapRawResponseToStoryObject from "@/graphql/data-mapping/StoryDataMapping";
-import type { RawStory, NormalisedStory } from '@/types/index.d';
 
-const NoResults = () => {
-    return (
-        <p> Nothing was found </p>
-    )
-}
+// Component Imports
+import TopicPageMainContent from '../components/TopicPageMainContent';
+import { NoResults } from './components/NoResults' 
+
+import type { RawStory, NormalisedStory } from '@/types/index.d';
 
 const Page = async ({ searchParams }) => {
 
