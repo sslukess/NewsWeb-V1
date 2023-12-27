@@ -1,7 +1,8 @@
 import apolloClient from '../../../graphql/Client'
 import { ALL_STORIES_QUERY } from '../../../graphql/queries/AllStories'
 import mapRawResponseToStoryObject from '../../../graphql/data-mapping/StoryDataMapping';
-import { NormalisedStory } from '../../../types/index.d';
+import type { NormalisedStory } from '../../../types/index.d';
+import { getStoryFromSlug } from ''
 
 // Components
 import StoryPageStructure from './components/story-structure'

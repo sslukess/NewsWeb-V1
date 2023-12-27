@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 import apolloClient from '../Client';
 import { FRAGMENT_STORY_CONTENT } from '../fragments/StoryContent';
 
-const getStoryFromSlug = async (storySlug: string) => {
+export const getStoryFromSlug = async (storySlug: string) => {
 
     const STORY_QUERY = gql`
 
@@ -13,8 +13,8 @@ const getStoryFromSlug = async (storySlug: string) => {
             ...StoryElements
           }
         } 
-    }
-`
+      }
+  `
     const { data } = await apolloClient.query({
         query: STORY_QUERY,
     });
