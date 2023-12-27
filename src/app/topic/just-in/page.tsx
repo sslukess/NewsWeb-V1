@@ -1,6 +1,6 @@
 import getLatestStories from "../../../graphql/query-functions/LatestStories";
 import { RawStory, NormalisedStory } from "../../../types/index.d";
-import mapRawResponseToStoryObject from "../../../graphql/data-mapping/StoryDataMapping";
+import mapRawResponseToStoryObject from "@/graphql/data-mapping/StoryDataMapping";
 
 // Components
 import TopicPageMainContent from '../components/TopicPageMainContent';

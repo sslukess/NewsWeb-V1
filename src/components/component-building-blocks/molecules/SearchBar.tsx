@@ -1,17 +1,15 @@
-
 'use client'
 
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
+// sending the form submission to this page with the included query parameters.
+// The page itself will interpret the term, data fetch and then display results. 
+const searchResultsPage: string = "/topic/search-results"
 
 const SearchBar = () => {
 
     return (
-        <Form>
-            <InputGroup>
-                <Form.Control type="text" placeholder='search' />
-            </InputGroup>
-        </Form>
+        <form action={searchResultsPage}>
+                <input type="text" placeholder='search' name="searchTerm" id="searchTerm" />
+        </form>
     )
 }
 

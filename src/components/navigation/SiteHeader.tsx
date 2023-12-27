@@ -6,6 +6,7 @@ import useScreenSize from '../../utils/custom-hooks/useScreenSize';
 import StoryTopicNavBar from './SiteStoryTopicNavBar';
 import theme from '../../styling/CSS/theme/theme';
 import { useRouter } from 'next/navigation'
+import { SearchBar } from '@/components/component-building-blocks/ComponentBuildingBlockIndex';
 
 // === STYLES ===
 
@@ -56,11 +57,7 @@ function SiteHeaderBar() {
             {
                 !screenSize.isTabletOrMobile && 
             <HeaderElement>
-                <Form>
-                    <InputGroup>
-                        <Form.Control type="text" placeholder='search' />
-                    </InputGroup>
-                </Form>
+                <SearchBar />
             </HeaderElement>
             }
 
