@@ -8,7 +8,7 @@ export const getStoryFromSlug = async (storySlug: string) => {
 
     ${FRAGMENT_STORY_CONTENT}
     query {
-        storyCollection(where: { slug: ${storySlug} } ) {
+        storyCollection(where: { slug: "${storySlug}" } ) {
           items {
             ...StoryElements
           }
@@ -19,7 +19,7 @@ export const getStoryFromSlug = async (storySlug: string) => {
         query: STORY_QUERY,
     });
 
-    return data.storyCollection.items;
+    return data.storyCollection.items[0];
 }
 
 export default getStoryFromSlug;

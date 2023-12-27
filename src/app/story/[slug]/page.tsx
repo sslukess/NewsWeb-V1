@@ -2,7 +2,7 @@ import apolloClient from '../../../graphql/Client'
 import { ALL_STORIES_QUERY } from '../../../graphql/queries/AllStories'
 import mapRawResponseToStoryObject from '../../../graphql/data-mapping/StoryDataMapping';
 import type { NormalisedStory } from '../../../types/index.d';
-import { getStoryFromSlug } from ''
+import { getStoryFromSlug } from '@/graphql/query-functions/getStoryFromSlug';
 
 // Components
 import StoryPageStructure from './components/story-structure'
@@ -21,21 +21,17 @@ export const generateStaticParams = async () => {
         return { slug: item.slug }
     });
 
-    console.log(paths);
+    console.log('paths: ', paths);
 
     return paths;
 }
 
 // getStaticProps
 const getStoryContents = async ( params ) => {
-    const { data } = await apolloClient.query({
-        query: ALL_STORIES_QUERY,
-    });
 
-    //filter data for params slug
-    const storyData = data.storyCollection.items.find(
-        (item) => item.slug === params?.slug
-    );
+    // get the story from the param slug
+    const slugToGet = params?.slug || null; 
+    const storyData = await getStoryFromSlug(slugToGet);
 
     return storyData;
 }
