@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Spinner } from '@/components/component-building-blocks/atoms/Spinner';
 import { Suspense } from 'react';
 import Image from 'next/image'
 import { StyledLink } from '../../components/component-building-blocks/ComponentBuildingBlockIndex'
@@ -49,7 +50,7 @@ const LeadStory = ({ rawStory }) => {
     const { storyTitle, storySummary, storyPhoto, author, storyDate, slug } = cleanStory;
 
     return (
-        <Suspense fallback={<div>... Loading</div>}>
+        <Suspense fallback={<Spinner />}>
             <StoryContainer fluid>
                 <Row>
                     <Col md lg={6}>
@@ -59,16 +60,18 @@ const LeadStory = ({ rawStory }) => {
                     </Col>
 
                     <Col xs={{ order: 'first' }} md={{ order: 'last' }} >
-                        <StoryImageWrapper>
-                            <StyledLink
-                                href={`story/${slug}`}>
-                                <StoryImage
-                                    src={`${storyPhoto.url}`}
-                                    fill={true}
-                                    alt={'XXX'}
-                                />
-                            </StyledLink>
-                        </StoryImageWrapper>
+                        <Suspense fallback={<Spinner />}>
+                            <StoryImageWrapper>
+                                <StyledLink
+                                    href={`story/${slug}`}>
+                                    <StoryImage
+                                        src={`${storyPhoto.url}`}
+                                        fill={true}
+                                        alt={'XXX'}
+                                    />
+                                </StyledLink>
+                            </StoryImageWrapper>
+                        </Suspense>
                     </Col>
                 </Row>
             </StoryContainer>

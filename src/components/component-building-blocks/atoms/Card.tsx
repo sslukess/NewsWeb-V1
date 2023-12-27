@@ -117,7 +117,7 @@ function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy, date, author, onCl
 
               {!screenSize.isTabletOrMobile &&
                 <ButtonWrapper>
-                  <Button variant="light" onClick={onClick} href={link}>{buttonCopy}</Button>
+                  <Button variant="outline-success" onClick={onClick} href={link}>{buttonCopy}</Button>
                 </ButtonWrapper>
               }
 

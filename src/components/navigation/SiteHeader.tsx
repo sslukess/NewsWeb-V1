@@ -49,7 +49,7 @@ function SiteHeaderBar() {
         <HeaderContainer fluid>
             <HeaderElement>
                 <LogoWrapper>
-                    <LogoImg onClick={() => router.push('/')} src="/newLogo.png" alt="logo" />
+                    <LogoImg onClick={() => router.push('/')} src="/greenHarbourLogo.png" alt="logo" />
                 </LogoWrapper>
             </HeaderElement>
 
