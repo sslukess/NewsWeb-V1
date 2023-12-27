@@ -1,11 +1,13 @@
 'use client'
 
 // Components
+import { Suspense } from 'react';
 import Button from 'react-bootstrap/Button';
 import styled from 'styled-components';
 import { Col, Row, Container } from 'react-bootstrap';
 import { breakpoint, breakpointSizes } from '../../../styling/style-mix-ins/CssBreakpoints';
 import StyledLink from './StyledLink';
+import { Spinner } from "@/components/component-building-blocks/atoms/Spinner"
 
 // Hooks
 import useScreenSize from '../../../utils/custom-hooks/useScreenSize';
@@ -102,35 +104,36 @@ function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy, date, author, onCl
 
   return (
 
-    <StoryCardWrapper fluid>
-      <StyledRow>
-        
+    <Suspense fallback={<Spinner />}>
+      <StoryCardWrapper fluid>
+        <StyledRow>
 
-        <StyledCol sm={{ order: 'first' }} md={{ order: 'last' }}>
-          <TextWrapper>
-            <p>{date} - {author}</p>
-            <StyledLink href={link}><h3>{cardTitle}</h3></StyledLink>
-            {cardCopy}
 
-            {!screenSize.isTabletOrMobile &&
-              <ButtonWrapper>
-                <Button variant="light" onClick={onClick} href={link}>{buttonCopy}</Button>
-              </ButtonWrapper>
-            }
+          <StyledCol sm={{ order: 'first' }} md={{ order: 'last' }}>
+            <TextWrapper>
+              <p>{date} - {author}</p>
+              <StyledLink href={link}><h3>{cardTitle}</h3></StyledLink>
+              {cardCopy}
 
-          </TextWrapper>
-        </StyledCol>
+              {!screenSize.isTabletOrMobile &&
+                <ButtonWrapper>
+                  <Button variant="light" onClick={onClick} href={link}>{buttonCopy}</Button>
+                </ButtonWrapper>
+              }
 
-        <StyledCol md={4}>
-          <ImageWrapper
-          href={link}>
-            <StyledImg src={resizedImgSrc} alt='story picture' width={'auto'} height={180} />
-          </ImageWrapper>
-        </StyledCol>
+            </TextWrapper>
+          </StyledCol>
 
-      </StyledRow>
-    </StoryCardWrapper>
+          <StyledCol md={4}>
+            <ImageWrapper
+              href={link}>
+              <StyledImg src={resizedImgSrc} alt='story picture' width={'auto'} height={180} />
+            </ImageWrapper>
+          </StyledCol>
 
+        </StyledRow>
+      </StoryCardWrapper>
+    </Suspense>
   );
 }
 
