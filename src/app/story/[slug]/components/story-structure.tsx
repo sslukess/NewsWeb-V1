@@ -1,5 +1,7 @@
 'use client';
 
+import { Suspense } from 'react';
+import { Spinner } from '@/components/component-building-blocks/atoms/Spinner';
 import styled from 'styled-components'
 import { Col, Row, Container } from "react-bootstrap";
 import Image from 'next/image';
@@ -59,9 +61,9 @@ const StoryText = styled.div`
 interface StoryPageStructureProps {
     storyTitle: string,
     storyBody: ReactNode,
-    storyPhotoURL: string, 
-    author: string, 
-    storyDate: string, 
+    storyPhotoURL: string,
+    author: string,
+    storyDate: string,
     storyPhotoName: string
 }
 
@@ -75,12 +77,13 @@ function StoryPageStructure(props: StoryPageStructureProps) {
                 <Col lg={8}>
 
                     <StoryHeading>{storyTitle}</StoryHeading>
-
-                    <StoryImageWrapper>
-                        <StoryImage src={storyPhotoURL}
-                            layout={'fill'}
-                            alt={storyPhotoName} />
-                    </StoryImageWrapper>
+                    <Suspense fallback={<div>LOADING</div>}>
+                        <StoryImageWrapper>
+                            <StoryImage src={storyPhotoURL}
+                                layout={'fill'}
+                                alt={storyPhotoName} />
+                        </StoryImageWrapper>
+                    </Suspense>
 
                     <StoryByLine>{storyDate} {author ? " - " + author : null}</StoryByLine>
 

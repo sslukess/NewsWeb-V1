@@ -1,4 +1,4 @@
-import getLatestStories from "../../../graphql/query-functions/LatestStories";
+
 import { RawStory, NormalisedStory } from "../../../types/index.d";
 import mapRawResponseToStoryObject from "../../../graphql/data-mapping/StoryDataMapping";
 import apolloClient from '../../../graphql/Client'
@@ -7,23 +7,23 @@ import { ALL_STORIES_QUERY } from '../../../graphql/queries/AllStories'
 // Components
 import TopicPageMainContent from '../components/TopicPageMainContent';
 import getStoryTopics from "../../../utils/story-utils/GetStoryTopics";
-import Container from "react-bootstrap/Container";
+import { Suspense } from "react";
+import {Spinner} from '@/components/component-building-blocks/atoms/Spinner';
 
 
 // -- Generate the page paths for each story category 
 
+// export const generateStaticParams = async () => {
 
-export const generateStaticParams = async () => {
+//     const topics = await getStoryTopics();
 
-    const topics = await getStoryTopics();
+//     // Return the paths for each category
+//     const paths = topics.map((top) => {
+//         return { topic: top };
+//     });
 
-    // Return the paths for each category
-    const paths = topics.map((top) => {
-        return { topic: top };
-    });
-
-    return paths;
-}
+//     return [paths];
+// }
 
 const getStoriesFromTopic = async ( topicToGet: string ): Promise<RawStory[]> => {
 
@@ -71,8 +71,9 @@ const CategoryPage = async ({params}) => {
     });
 
     return (
-
-        <TopicPageMainContent stories={cleanedStories} pageHeading={upperCaseTopic}/>
+        <Suspense fallback={<Spinner />}>
+            <TopicPageMainContent stories={cleanedStories} pageHeading={upperCaseTopic}/>
+        </Suspense>
     );
 };
 
