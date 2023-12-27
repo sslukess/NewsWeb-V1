@@ -46,10 +46,10 @@ function SiteHeaderBar() {
     const router = useRouter(); 
 
     return (
-        <HeaderContainer onClick={() => router.push('/')} fluid>
+        <HeaderContainer fluid>
             <HeaderElement>
                 <LogoWrapper>
-                    <LogoImg src="/newLogo.png" alt="logo" />
+                    <LogoImg onClick={() => router.push('/')} src="/newLogo.png" alt="logo" />
                 </LogoWrapper>
             </HeaderElement>
 
