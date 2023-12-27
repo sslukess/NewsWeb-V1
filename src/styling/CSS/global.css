@@ -1,0 +1,12 @@
+/* FONTS */
+
+body {
+    font-family: 'Overpass', sans-serif !important;
+    background-color: mintcream;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
