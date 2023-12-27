@@ -3,10 +3,11 @@ import theme from '../styling/CSS/theme/theme'
 import StyledComponentsRegistry from '../styling/styled-components/registry'
 
 //CSS Imports
-import '../styling/CSS/reset.css';
+import '@/styling/CSS/reset.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styling/CSS/burger-menu.css';
-import '../styling/CSS/global.css';
+import '@/styling/CSS/burger-menu.css';
+import '@/styling/CSS/global.css';
+
 
 // importing components
 import { SiteFooter, SiteHeader, SiteBurgerMenu } from '../components/index'

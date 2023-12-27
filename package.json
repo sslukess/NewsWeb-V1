@@ -18,7 +18,8 @@
     "react-responsive": "^9.0.2",
     "slugify": "^1.6.6",
     "style-loader": "^3.3.2",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "webpack": "^5.89.0"
   },
   "scripts": {
     "dev": "next dev",
