@@ -3,6 +3,7 @@ import { ALL_STORIES_QUERY } from '../../../graphql/queries/AllStories'
 import mapRawResponseToStoryObject from '../../../graphql/data-mapping/StoryDataMapping';
 import type { NormalisedStory } from '../../../types/index.d';
 import { getStoryFromSlug } from '@/graphql/query-functions/getStoryFromSlug';
+import { getPhotoWithSize } from '@/utils/story-utils/GetPhotoWithSize';
 
 // Components
 import StoryPageStructure from './components/story-structure'
@@ -47,10 +48,10 @@ const StoryPage = async ({ params }) => {
     const {storyTitle, storyBody, storyPhoto, author, storyDate } = cleanStory;
 
     // pull the image URL 
-    const storyPhotoURL = `${storyPhoto.url}?w=400`;
+    const storyPhotoURL = await getPhotoWithSize(storyPhoto.url, null, 1000);
 
     return (
-        <StoryPageStructure storyTitle={storyTitle} storyBody={storyBody} storyPhotoURL={storyPhotoURL} author={author} storyDate={storyDate} />
+        <StoryPageStructure storyTitle={storyTitle} storyBody={storyBody} storyPhotoURL={storyPhotoURL} storyPhotoName={storyPhoto.fileName} author={author} storyDate={storyDate} />
     )
 }
 

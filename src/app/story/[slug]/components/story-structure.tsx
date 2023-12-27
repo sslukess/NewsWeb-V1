@@ -5,6 +5,7 @@ import { Col, Row, Container } from "react-bootstrap";
 import Image from 'next/image';
 
 import { breakpoint, breakpointSizes } from '../../../../styling/style-mix-ins/CssBreakpoints';
+import { ReactNode } from 'react';
 
 // Styles 
 const StoryContainer = styled(Container)`
@@ -53,13 +54,20 @@ const StoryText = styled.div`
 
 `
 
-const HeadingWrapper = styled.div`
-    display: flex;
-`;
+// Types
 
-function StoryPageStructure(props) {
+interface StoryPageStructureProps {
+    storyTitle: string,
+    storyBody: ReactNode,
+    storyPhotoURL: string, 
+    author: string, 
+    storyDate: string, 
+    storyPhotoName: string
+}
 
-    const { storyTitle, storyBody, storyPhotoURL, author, storyDate } = props;
+function StoryPageStructure(props: StoryPageStructureProps) {
+
+    const { storyTitle, storyBody, storyPhotoURL, author, storyDate, storyPhotoName } = props;
 
     return (
         <StoryContainer fluid>
@@ -71,7 +79,7 @@ function StoryPageStructure(props) {
                     <StoryImageWrapper>
                         <StoryImage src={storyPhotoURL}
                             layout={'fill'}
-                            alt={'XXX'} />
+                            alt={storyPhotoName} />
                     </StoryImageWrapper>
 
                     <StoryByLine>{storyDate} {author ? " - " + author : null}</StoryByLine>
