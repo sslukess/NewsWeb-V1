@@ -7,6 +7,7 @@ import StoryTopicNavBar from './SiteStoryTopicNavBar';
 import theme from '../../styling/CSS/theme/theme';
 import { useRouter } from 'next/navigation'
 import { SearchBar } from '@/components/component-building-blocks/ComponentBuildingBlockIndex';
+import { breakpointSizes, breakpoint } from '@/styling/style-mix-ins/CssBreakpoints';
 
 // === STYLES ===
 
@@ -24,20 +25,28 @@ const HeaderContainer = styled(Container)`
 `;
 
 // Header element 
-const HeaderElement = styled.div`
+const SearchWrapper = styled.div`
     padding: 10px;
+    flex: 0 0 20em;
+    display: flex;
+    justify-content: end;
 `;
 
 // Logo wrapper 
 const LogoWrapper = styled.div`
-    // padding: 1rem;
-    width: 20em;
+    flex: 0 1 20em;
+    padding: 10px;
+
+    ${breakpoint.down(breakpointSizes.sm)`
+    flex-basis: 16em;
+    padding: 23px;
+`}}
 `;
 
 // logo img element 
 const LogoImg = styled.img`
     width: 100%;
-    height: auto
+    height: auto;
 `;
 
 function SiteHeaderBar() {
@@ -47,18 +56,16 @@ function SiteHeaderBar() {
 
     return (
         <HeaderContainer fluid>
-            <HeaderElement>
                 <LogoWrapper>
                     <LogoImg onClick={() => router.push('/')} src="/greenHarbourLogo.png" alt="logo" />
                 </LogoWrapper>
-            </HeaderElement>
 
             {/* Search bar - should hide for tablet/mobile */}
             {
                 !screenSize.isTabletOrMobile && 
-            <HeaderElement>
+            <SearchWrapper>
                 <SearchBar />
-            </HeaderElement>
+            </SearchWrapper>
             }
 
         </HeaderContainer>
