@@ -8,6 +8,7 @@ import { Spinner } from '@/components/component-building-blocks/atoms/Spinner';
 import { Suspense } from 'react';
 import Image from 'next/image'
 import { StyledLink } from '../../components/component-building-blocks/ComponentBuildingBlockIndex'
+import { useRouter } from 'next/navigation'; 
 
 import mapRawResponseToStoryObject from '../../graphql/data-mapping/StoryDataMapping';
 import { NormalisedStory } from '../../types/index.d';
@@ -15,6 +16,9 @@ import { breakpoint, breakpointSizes } from '../../styling/style-mix-ins/CssBrea
 
 // -- COMPONENTS --
 const StoryContainer = styled(Container)`
+min-height: 30vh;
+margin: 12px 0;
+sizing: border-box;
         
     ${breakpoint.up(breakpointSizes.lg)`
             padding: 12px 60px;
@@ -23,12 +27,13 @@ const StoryContainer = styled(Container)`
 `;
 
 const StoryImage = styled(Image)`
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 10px;
 `
 
 const StoryImageWrapper = styled.div`
     position: relative !important;
-    height: 300px;
+    height: 430px;
    
 `
 
@@ -49,11 +54,13 @@ const LeadStory = ({ rawStory }) => {
 
     const { storyTitle, storySummary, storyPhoto, author, storyDate, slug } = cleanStory;
 
+    const router = useRouter();
+
     return (
         <Suspense fallback={<Spinner />}>
             <StoryContainer fluid>
                 <Row>
-                    <Col md lg={6}>
+                    <Col md lg={6}  style={{margin: "6px 0"}}>
                         <StoryHeading><StyledLink href={`story/${slug}`}>{storyTitle}</StyledLink></StoryHeading>
                         <StoryByLine>{storyDate} - {author}</StoryByLine>
                         <StoryText>{storySummary}</StoryText>
@@ -62,14 +69,12 @@ const LeadStory = ({ rawStory }) => {
                     <Col xs={{ order: 'first' }} md={{ order: 'last' }} >
                         <Suspense fallback={<Spinner />}>
                             <StoryImageWrapper>
-                                <StyledLink
-                                    href={`story/${slug}`}>
                                     <StoryImage
                                         src={`${storyPhoto.url}`}
                                         fill={true}
                                         alt={storyTitle}
+                                        onClick={() => router.push(`/story/${slug}`)}
                                     />
-                                </StyledLink>
                             </StoryImageWrapper>
                         </Suspense>
                     </Col>
