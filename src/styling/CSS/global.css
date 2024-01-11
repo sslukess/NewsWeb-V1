@@ -9,4 +9,9 @@ main {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.mainSection {
+    max-width: 1800px;
 }
