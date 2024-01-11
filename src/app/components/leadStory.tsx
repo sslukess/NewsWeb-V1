@@ -67,7 +67,7 @@ const LeadStory = ({ rawStory }) => {
                                     <StoryImage
                                         src={`${storyPhoto.url}`}
                                         fill={true}
-                                        alt={'XXX'}
+                                        alt={storyTitle}
                                     />
                                 </StyledLink>
                             </StoryImageWrapper>

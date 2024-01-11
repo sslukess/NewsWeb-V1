@@ -1,5 +1,4 @@
 // styled components theme provider
-import theme from '../styling/CSS/theme/theme'
 import StyledComponentsRegistry from '../styling/styled-components/registry'
 
 //CSS Imports
@@ -45,7 +44,7 @@ const RootLayout = async ({ children }) => {
                         {/* Main App */}
                         <main>
                             <SiteHeader topics={topics} />
-                            <section>
+                            <section className='mainSection'>
                                 {children}
                             </section>
                             <SiteFooter />
