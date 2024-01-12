@@ -11,7 +11,7 @@ const TopicNavBarContainer = styled(Container)`
     justify-content: space-around;
     align-items: center;
     padding: 5px;
-    border-bottom: 10px solid ${theme.colors.primary};
+    border-bottom: 7px solid ${theme.colors.secondary};
 `;
 
 

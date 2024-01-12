@@ -22,6 +22,7 @@ const HeaderContainer = styled(Container)`
     padding: 0;
     border-bottom: 1px solid ${theme.colors.secondary};
     cursor: pointer;
+    border-radius: 3px 3px 0 0;
 `;
 
 // Header element 

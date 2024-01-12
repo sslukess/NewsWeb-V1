@@ -1,8 +1,14 @@
 /* FONTS */
 
+html {
+    background-color: slategray;
+}
+
 body {
     font-family: 'Overpass', sans-serif !important;
-    background-color: mintcream;
+    background-color: rgb(237, 237, 237);
+    margin: 0.5px;
+    border-radius: 10px;
 }
 
 main {

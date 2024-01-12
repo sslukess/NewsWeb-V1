@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import theme from '../../styling/CSS/theme/theme';
 
 const StyledFooter = styled.footer`
+    border-radius: 0 0 3px 3px;
     background-color: ${theme.colors.primary};
     color: ${theme.text.colors.light};
     padding: 10px;

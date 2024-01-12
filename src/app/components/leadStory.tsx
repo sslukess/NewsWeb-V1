@@ -10,6 +10,7 @@ import Image from 'next/image'
 import { StyledLink } from '../../components/component-building-blocks/ComponentBuildingBlockIndex'
 import { useRouter } from 'next/navigation'; 
 import { getPhotoWithSize } from '@/utils/story-utils/GetPhotoWithSize';
+import theme from '@/styling/CSS/theme/theme'
 
 import mapRawResponseToStoryObject from '../../graphql/data-mapping/StoryDataMapping';
 import { NormalisedStory } from '../../types/index.d';
@@ -39,14 +40,17 @@ const StoryImageWrapper = styled.div`
 `
 
 const StoryHeading = styled.h1`
+    color: ${theme.text.colors.primary}
 `
 
 const StoryByLine = styled.p`
     font-style: italic;
     font-size: 0.8rem;
+    color: ${theme.text.colors.primary}
 `
 
 const StoryText = styled.div`
+    color: ${theme.text.colors.primary}
 `
 
 const LeadStory = ({ rawStory }) => {
