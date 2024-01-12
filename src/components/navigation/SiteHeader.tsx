@@ -1,7 +1,7 @@
 'use client'
 
-import { Container, Form, InputGroup } from 'react-bootstrap';
-import styled from 'styled-components';
+import { Container } from 'react-bootstrap';
+import styled, { keyframes } from 'styled-components';
 import useScreenSize from '../../utils/custom-hooks/useScreenSize';
 import StoryTopicNavBar from './SiteStoryTopicNavBar';
 import theme from '../../styling/CSS/theme/theme';
@@ -12,6 +12,11 @@ import Logo from './Logo';
 // === STYLES ===
 
 // Header container
+
+const wiggle = keyframes`
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+`
 
 const HeaderContainer = styled(Container)`
     background-color: ${theme.colors.primary};
@@ -29,6 +34,12 @@ const LogoWrapper = styled.div`
     flex: 0 1 auto;
     padding: 10px;
     cursor: pointer;
+
+    &:hover {
+        animation: ${wiggle} 0.3s;
+        animation-fill-mode: forwards;
+        text-decoration: italic;
+    }
 `;
 
 
