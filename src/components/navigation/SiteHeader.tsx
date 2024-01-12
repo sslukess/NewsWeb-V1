@@ -52,7 +52,6 @@ function SiteHeaderBar() {
     return (
         <HeaderContainer fluid>
             <LogoWrapper onClick={() => router.push('/')} >
-                {/* <LogoImg onClick={() => router.push('/')} src="/greenHarbourLogo.png" alt="logo" /> */}
                 <Logo masthead={masthead} />
             </LogoWrapper>
         </HeaderContainer>
