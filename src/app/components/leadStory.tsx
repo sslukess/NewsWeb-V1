@@ -9,6 +9,7 @@ import { Suspense } from 'react';
 import Image from 'next/image'
 import { StyledLink } from '../../components/component-building-blocks/ComponentBuildingBlockIndex'
 import { useRouter } from 'next/navigation'; 
+import { getPhotoWithSize } from '@/utils/story-utils/GetPhotoWithSize';
 
 import mapRawResponseToStoryObject from '../../graphql/data-mapping/StoryDataMapping';
 import { NormalisedStory } from '../../types/index.d';
@@ -28,12 +29,12 @@ sizing: border-box;
 
 const StoryImage = styled(Image)`
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 5px;
 `
 
 const StoryImageWrapper = styled.div`
     position: relative !important;
-    height: 430px;
+    height: 350px;
    
 `
 
@@ -54,13 +55,16 @@ const LeadStory = ({ rawStory }) => {
 
     const { storyTitle, storySummary, storyPhoto, author, storyDate, slug } = cleanStory;
 
+    // add sizing parameters to send to contentful: 
+    const resizedImgSrc = getPhotoWithSize(storyPhoto.url, null, 400);
+
     const router = useRouter();
 
     return (
         <Suspense fallback={<Spinner />}>
             <StoryContainer fluid>
                 <Row>
-                    <Col md lg={6}  style={{margin: "6px 0"}}>
+                    <Col md lg={7}  style={{margin: "6px 0"}}>
                         <StoryHeading><StyledLink href={`story/${slug}`}>{storyTitle}</StyledLink></StoryHeading>
                         <StoryByLine>{storyDate} - {author}</StoryByLine>
                         <StoryText>{storySummary}</StoryText>
@@ -70,7 +74,7 @@ const LeadStory = ({ rawStory }) => {
                         <Suspense fallback={<Spinner />}>
                             <StoryImageWrapper>
                                     <StoryImage
-                                        src={`${storyPhoto.url}`}
+                                        src={resizedImgSrc}
                                         fill={true}
                                         alt={storyTitle}
                                         onClick={() => router.push(`/story/${slug}`)}

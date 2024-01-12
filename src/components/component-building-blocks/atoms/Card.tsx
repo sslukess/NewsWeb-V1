@@ -8,6 +8,7 @@ import { Col, Row, Container } from 'react-bootstrap';
 import { breakpoint, breakpointSizes } from '../../../styling/style-mix-ins/CssBreakpoints';
 import StyledLink from './StyledLink';
 import { Spinner } from "@/components/component-building-blocks/atoms/Spinner"
+import Image from 'next/image'
 
 // Hooks
 import useScreenSize from '../../../utils/custom-hooks/useScreenSize';
@@ -29,34 +30,27 @@ interface BasicCardProps {
 
 // === STYLES ===
 
-const StoryCardWrapper = styled(Container)`
-    display: flex;
-    border-top: 0.4px solid black;
-    margin: 10px auto;
-    height: auto;
-    flex: 1 1 auto;
-    align-items: flex-start;
+const StyledImg = styled(Image)`
+object-fit: cover;
+border-radius: 5px;
 `;
 
-const ImageWrapper = styled(StyledLink)`
-    display: flex;
-    justify-content: center;
-    align-items: top;
-    width: 100%;
-    height: 180px;
-    overflow: hidden;
-    padding: 3px;
-    flex: 1 2 auto;
+const ImageWrapper = styled.div`
+  flex: 2 1 280px;
+
+  position: relative !important;
+  height: 280px;
 `;
 
 const TextWrapper = styled.div`
+    flex: 1 3 70%;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
     width: 100%;
     overflow: hidden;
-    flex: 2 1 auto;
 
     ${breakpoint.down(breakpointSizes.md)`
 
@@ -73,66 +67,54 @@ const ButtonWrapper = styled.div`
 
   `;
 
-const StyledRow = styled(Row)`
-    flex: 1 1 auto;
-`;
-
-const StyledImg = styled.img`
-    padding: 10px;
-
-`;
-
-const StyledCol = styled(Col)`
-
-    // no padding at breakpoint below md
-
-    ${breakpoint.down(breakpointSizes.md)`
-
-      padding: 0px;
-    
-    `}
-
-
+const CardWrapper = styled.div`
+  padding: 12px;
+  display: flex;
+  border-top: 0.4px solid black;
+  margin: 10px auto;
+  height: auto;
+  // flex: 0 0 auto;
+  align-items: flex-start;
 `
 
 function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy, date, author, onClick, link }: BasicCardProps) {
 
   // add sizing parameters to send to contentful: 
-  const resizedImgSrc = getPhotoWithSize(imgSrc, null, 180);
+  const resizedImgSrc = getPhotoWithSize(imgSrc, null, 280);
+
 
   const screenSize = useScreenSize();
 
   return (
 
     <Suspense fallback={<Spinner />}>
-      <StoryCardWrapper fluid>
-        <StyledRow>
+      <CardWrapper>
+
+      {!screenSize.isTabletOrMobile &&
+          <ImageWrapper>
+            <StyledImg src={resizedImgSrc} alt='story picture' fill={true} />
+          </ImageWrapper>
+        }
+
+        <TextWrapper>
+          <StyledLink href={link}><h3>{cardTitle}</h3></StyledLink>
+          <p>{date} - {author}</p>
+          {cardCopy}
+
+          {!screenSize.isTinyMobile &&
+            <ButtonWrapper>
+              <Button variant="outline-success" onClick={onClick} href={link}>{buttonCopy}</Button>
+            </ButtonWrapper>
+          }
+
+        </TextWrapper>
 
 
-          <StyledCol sm={{ order: 'first' }} md={{ order: 'last' }}>
-            <TextWrapper>
-              <p>{date} - {author}</p>
-              <StyledLink href={link}><h3>{cardTitle}</h3></StyledLink>
-              {cardCopy}
 
-              {!screenSize.isTabletOrMobile &&
-                <ButtonWrapper>
-                  <Button variant="outline-success" onClick={onClick} href={link}>{buttonCopy}</Button>
-                </ButtonWrapper>
-              }
+        
 
-            </TextWrapper>
-          </StyledCol>
 
-          <StyledCol md={4}>
-            <ImageWrapper
-              href={link}>
-              <StyledImg src={resizedImgSrc} alt='story picture' width={'auto'} height={180} />
-            </ImageWrapper>
-          </StyledCol>
-
-        </StyledRow>
-      </StoryCardWrapper>
+      </CardWrapper>
     </Suspense>
   );
 }

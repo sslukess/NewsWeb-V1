@@ -12,13 +12,11 @@ import styled from "styled-components";
 
 interface MapStoriesToCardsProps {
     stories: NormalisedStory[],
-    md?: number,
-    sm?: number
 }
 
 // styled container with padding and margin for wrapper 
 
-const CardRowWrapper = styled(Container)`
+const CardRowWrapper = styled.section`
 ${breakpoint.up(breakpointSizes.lg)`
 padding: 12px 60px;
 `}
@@ -27,19 +25,15 @@ padding: 12px 60px;
 // loading component
 const Loading = () => <div>loading...</div>; 
 
-const MapStoriesToCards = ({stories, md = 8, sm = 12}: MapStoriesToCardsProps) => {
+const MapStoriesToCards = ({ stories }: MapStoriesToCardsProps) => {
 
     return (
         <Suspense fallback={<Loading />}>
             <CardRowWrapper fluid>
-                <Row>
-                    {stories.map((story) => {
-                        return (<Col
-                            md={md}
-                            sm={sm}
-                            key={story.slug}>
+                    {stories.map((story) => (
                                 
                             <BasicCard
+                                key={story.slug}
                                 imgSrc={`${story.storyPhoto.url}`}
                                 cardTitle={story.storyTitle}
                                 cardCopy={story.storySummary}
@@ -47,10 +41,7 @@ const MapStoriesToCards = ({stories, md = 8, sm = 12}: MapStoriesToCardsProps) =
                                 date={story.storyDate}
                                 author={story.author}
                                 link={`/story/${story.slug}`}
-                            />
-                        </Col>)
-                    })}
-                </Row>
+                            />))}
             </CardRowWrapper>
             </Suspense>
         )
