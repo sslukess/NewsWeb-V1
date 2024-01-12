@@ -21,14 +21,13 @@ const StoryContainer = styled(Container)`
 `
 
 const StoryImage = styled(Image)`
-    padding: 5px;
     width: 100%;
     object-fit: cover;
+    border-radius: 3px;
 `
 const StoryImageWrapper = styled.div`
     position: relative !important;
-    
-    padding: 10px;
+    margin: 15px 0;
 
     // height for mobile and desktop 
 
