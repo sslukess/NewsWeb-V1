@@ -8,6 +8,7 @@ import theme from '../../styling/CSS/theme/theme';
 import { useRouter } from 'next/navigation'
 import getMastheadName from '@/utils/app-utils/getMastheadName';
 import Logo from './Logo';
+import { breakpoint, breakpointSizes } from "@/styling/style-mix-ins/CssBreakpoints";
 
 // === STYLES ===
 
@@ -22,7 +23,7 @@ const HeaderContainer = styled(Container)`
     background-color: ${theme.colors.primary};
     color: ${theme.text.colors.primary};
     display: flex;
-    justify-content: center;
+    justify-content: ${(props) => props.leftAlign ? "start" : "center"};
     align-items: start;
     padding: 0;
     border-bottom: 1px solid ${theme.colors.secondary};
@@ -50,7 +51,7 @@ function SiteHeaderBar() {
     const masthead = getMastheadName();
 
     return (
-        <HeaderContainer fluid>
+        <HeaderContainer fluid leftAlign={screenSize.isTinyMobile ? true : false}>
             <LogoWrapper onClick={() => router.push('/')} >
                 <Logo masthead={masthead} />
             </LogoWrapper>
