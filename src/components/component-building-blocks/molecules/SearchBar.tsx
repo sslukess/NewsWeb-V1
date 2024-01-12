@@ -10,15 +10,21 @@ const searchResultsPage: string = "/topic/search-results"
 
 const StyledSearchBox = styled.input`
     padding: 4px;
-    border: 2px solid ${theme.colors.grey};
-    border-radius: 11px;
+    border: 2px solid ${theme.colors.secondary};
+    border-radius: 4px;
+    text-align: end;
+
+    &:active,
+    &:focus {
+        outline: 4px solid ${theme.colors.secondary};
+    }
 `
 
 const SearchBar = () => {
 
     return (
         <form action={searchResultsPage}>
-                <StyledSearchBox type="text" placeholder='search...' name="searchTerm" id="searchTerm" />
+                <StyledSearchBox type="text" placeholder='🔍' name="searchTerm" id="searchTerm" />
         </form>
     )
 }
