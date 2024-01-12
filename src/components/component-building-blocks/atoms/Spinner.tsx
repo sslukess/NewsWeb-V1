@@ -6,7 +6,7 @@ import styled from 'styled-components';
 export const Spin = styled.div`
     width: 48px;
     height: 48px;
-    border: 5px solid ${theme.colors.primary};
+    border: 5px solid ${theme.colors.secondary};
     border-bottom-color: transparent;
     border-radius: 50%;
     display: inline-block;
