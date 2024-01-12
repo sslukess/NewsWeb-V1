@@ -18,7 +18,7 @@ const StyledContainer = styled(Container)`
     padding-top: 12px;
 
     ${breakpoint.up(breakpointSizes.md)`
-    padding: 12px 60px 0 60px;
+        padding: 12px 60px 0 60px;
     `}
 `;
 

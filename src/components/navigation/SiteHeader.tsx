@@ -51,7 +51,7 @@ function SiteHeaderBar() {
     const masthead = getMastheadName();
 
     return (
-        <HeaderContainer fluid leftAlign={screenSize.isTinyMobile ? true : false}>
+        <HeaderContainer fluid leftAlign={screenSize.isMobile ? true : false}>
             <LogoWrapper onClick={() => router.push('/')} >
                 <Logo masthead={masthead} />
             </LogoWrapper>

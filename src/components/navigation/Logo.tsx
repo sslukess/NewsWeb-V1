@@ -1,12 +1,16 @@
 import styled from "styled-components"
 import theme from "@/styling/CSS/theme/theme"
-import type { ReactNode } from "react"
+import { breakpoint, breakpointSizes } from "@/styling/style-mix-ins/CssBreakpoints"
 
 
 const MainLogoWord = styled.h1`
     margin-bottom: 0px;
     font-size: 4rem; 
     line-height: 1;
+
+    ${breakpoint.down(breakpointSizes.sm)`
+    font-size: 3rem; 
+    `}
 `
 
 const UpperLogoWord = styled.p`
