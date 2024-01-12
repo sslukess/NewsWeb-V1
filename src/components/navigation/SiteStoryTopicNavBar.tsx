@@ -1,6 +1,6 @@
 'use client'
 
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import theme from '../../styling/CSS/theme/theme';
 import { Container } from 'react-bootstrap';
 import convertTopicsToLinks from '../../utils/story-utils/ConvertTopicsToLinks';
@@ -14,12 +14,23 @@ const TopicNavBarContainer = styled(Container)`
     border-bottom: 7px solid ${theme.colors.secondary};
 `;
 
+const wiggle = keyframes`
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+`
 
 // story nav bar tag 
 const TopicNavBarStoryTag = styled.div`
     padding: 5px;
     margin: 5px;
     text-align: center;
+
+    &:hover {
+        animation: ${wiggle} 0.3s;
+        animation-fill-mode: forwards;
+        color: ${theme.text.colors.linkHover} !important;
+    }
+    
 `;
 
 export function BasicStoryTopicTags({ tags }) {
