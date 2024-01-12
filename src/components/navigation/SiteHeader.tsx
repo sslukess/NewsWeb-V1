@@ -1,79 +1,65 @@
 'use client'
 
-import { Container, Form, InputGroup } from 'react-bootstrap';
-import styled from 'styled-components';
+import { Container } from 'react-bootstrap';
+import styled, { keyframes } from 'styled-components';
 import useScreenSize from '../../utils/custom-hooks/useScreenSize';
 import StoryTopicNavBar from './SiteStoryTopicNavBar';
 import theme from '../../styling/CSS/theme/theme';
 import { useRouter } from 'next/navigation'
-import { SearchBar } from '@/components/component-building-blocks/ComponentBuildingBlockIndex';
-import { breakpointSizes, breakpoint } from '@/styling/style-mix-ins/CssBreakpoints';
+import getMastheadName from '@/utils/app-utils/getMastheadName';
+import Logo from './Logo';
+import { breakpoint, breakpointSizes } from "@/styling/style-mix-ins/CssBreakpoints";
 
 // === STYLES ===
 
 // Header container
 
+const wiggle = keyframes`
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+`
+
 const HeaderContainer = styled(Container)`
     background-color: ${theme.colors.primary};
     color: ${theme.text.colors.primary};
     display: flex;
-    justify-content: space-between;
-    align-items: end;
+    justify-content: ${(props) => props.leftAlign ? "start" : "center"};
+    align-items: start;
     padding: 0;
     border-bottom: 1px solid ${theme.colors.secondary};
-    cursor: pointer;
-`;
-
-// Header element 
-const SearchWrapper = styled.div`
-    padding: 10px;
-    flex: 0 0 20em;
-    display: flex;
-    justify-content: end;
+    border-radius: 3px 3px 0 0;
 `;
 
 // Logo wrapper 
 const LogoWrapper = styled.div`
-    flex: 0 1 20em;
+    flex: 0 1 auto;
     padding: 10px;
+    cursor: pointer;
 
-    ${breakpoint.down(breakpointSizes.sm)`
-    flex-basis: 16em;
-    padding: 23px;
-`}}
+    &:hover {
+        animation: ${wiggle} 0.3s;
+        animation-fill-mode: forwards;
+        text-decoration: italic;
+    }
 `;
 
-// logo img element 
-const LogoImg = styled.img`
-    width: 100%;
-    height: auto;
-`;
 
 function SiteHeaderBar() {
 
     const screenSize = useScreenSize();
-    const router = useRouter(); 
+    const router = useRouter();
+    const masthead = getMastheadName();
 
     return (
-        <HeaderContainer fluid>
-                <LogoWrapper>
-                    <LogoImg onClick={() => router.push('/')} src="/greenHarbourLogo.png" alt="logo" />
-                </LogoWrapper>
-
-            {/* Search bar - should hide for tablet/mobile */}
-            {
-                !screenSize.isTabletOrMobile && 
-            <SearchWrapper>
-                <SearchBar />
-            </SearchWrapper>
-            }
-
+        <HeaderContainer fluid leftAlign={screenSize.isMobile ? true : false}>
+            <LogoWrapper onClick={() => router.push('/')} >
+                <Logo masthead={masthead} />
+            </LogoWrapper>
         </HeaderContainer>
     )
-
 }
 
-function SiteHeader({topics}) {
+function SiteHeader({ topics }) {
 
     const screenSize = useScreenSize();
 
@@ -83,7 +69,7 @@ function SiteHeader({topics}) {
 
             {/* Story Tags - should hide at mobile sizes */}
             {
-                !screenSize.isTabletOrMobile && <StoryTopicNavBar topics={topics}/>
+                !screenSize.isTabletOrMobile && <StoryTopicNavBar topics={topics} />
             }
         </>
     )

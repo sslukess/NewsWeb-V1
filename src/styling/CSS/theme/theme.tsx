@@ -1,18 +1,22 @@
 const theme = {
     colors: {
-        primary: '#198754',
-        secondary: '#198754',
+        primary: 'floralwhite',
+        secondary: 'lightcoral',
         grey: '#eaeaea',
     },
     text: {
         colors: {
             primary: '#212529',
             light: '#f3f3f3',
-            
+            logo: 'lightcoral',
             linkColor: '#212529',
-            linkHover: '#598b73',
+            linkHover: 'lightcoral',
         },
-    },
+        family: {
+            primary: "none",
+            logo: "'Lemon', serif"
+        }
+    }
 };
 // ffbd59  5e17eb
 

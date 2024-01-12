@@ -1,9 +1,11 @@
 'use client'
 import styled from 'styled-components';
 import theme from '../../styling/CSS/theme/theme';
+import getMastheadName from '@/utils/app-utils/getMastheadName';
 
 const StyledFooter = styled.footer`
-    background-color: ${theme.colors.primary};
+    border-radius: 0 0 3px 3px;
+    background-color: ${theme.colors.secondary};
     color: ${theme.text.colors.light};
     padding: 10px;
     width: 100%;
@@ -15,11 +17,13 @@ const StyledFooter = styled.footer`
 // TODO: Refactor styles out of elements and into styled compenents.
 export default function Footer() {
 
+    const masthead = getMastheadName();
+
     return (
 
         <StyledFooter className="">
             <div className="px-md-3 px-sm-2">
-                <i className="d-none d-md-inline">The Green Harbour Times</i>
+                <i className="d-none d-md-inline">{masthead.join(" ")}</i>
             </div>
             <div className="px-md-3 px-sm-2">© Luke Sampson Searle, 2023</div>
         </StyledFooter>

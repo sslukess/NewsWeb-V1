@@ -12,6 +12,7 @@ import {Spinner} from '@/components/component-building-blocks/atoms/Spinner';
 
 
 // -- Generate the page paths for each story category 
+// Commenting this out as it actually has a jarring effect on UX
 
 // export const generateStaticParams = async () => {
 
