@@ -17,8 +17,8 @@ interface MapStoriesToCardsProps {
 // styled container with padding and margin for wrapper 
 
 const CardRowWrapper = styled.section`
-${breakpoint.up(breakpointSizes.lg)`
-padding: 12px 60px;
+    ${breakpoint.up(breakpointSizes.lg)`
+    padding: 12px 60px;
 `}
 `;
 
