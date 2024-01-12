@@ -30,9 +30,12 @@ const RootLayout = async ({ children }) => {
                 <head>
                     <title>{siteName}</title>
 
+                    {/* Google Font Imports */}
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
                     <link rel="preconnect" href="https://fonts.gstatic.com" />
                     <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet" />
+                    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet"></link>
+                    <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet"></link>
             </head>
             <body>
                 <StyledComponentsRegistry>

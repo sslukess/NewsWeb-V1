@@ -8,6 +8,8 @@ import theme from '../../styling/CSS/theme/theme';
 import { useRouter } from 'next/navigation'
 import { SearchBar } from '@/components/component-building-blocks/ComponentBuildingBlockIndex';
 import { breakpointSizes, breakpoint } from '@/styling/style-mix-ins/CssBreakpoints';
+import getMastheadName from '@/utils/app-utils/getMastheadName';
+import Logo from './Logo';
 
 // === STYLES ===
 
@@ -35,38 +37,35 @@ const SearchWrapper = styled.div`
 
 // Logo wrapper 
 const LogoWrapper = styled.div`
-    flex: 0 1 20em;
+    flex: 0 1 auto;
     padding: 10px;
 
     ${breakpoint.down(breakpointSizes.sm)`
-    flex-basis: 16em;
-    padding: 23px;
-`}}
+    // flex-basis: 16em;
+    // padding: 23px;
+    `}}
 `;
 
-// logo img element 
-const LogoImg = styled.img`
-    width: 100%;
-    height: auto;
-`;
 
 function SiteHeaderBar() {
 
     const screenSize = useScreenSize();
-    const router = useRouter(); 
+    const router = useRouter();
+    const masthead = getMastheadName();
 
     return (
         <HeaderContainer fluid>
-                <LogoWrapper>
-                    <LogoImg onClick={() => router.push('/')} src="/greenHarbourLogo.png" alt="logo" />
-                </LogoWrapper>
+            <LogoWrapper onClick={() => router.push('/')} >
+                {/* <LogoImg onClick={() => router.push('/')} src="/greenHarbourLogo.png" alt="logo" /> */}
+                <Logo masthead={masthead} />
+            </LogoWrapper>
 
             {/* Search bar - should hide for tablet/mobile */}
             {
-                !screenSize.isTabletOrMobile && 
-            <SearchWrapper>
-                <SearchBar />
-            </SearchWrapper>
+                !screenSize.isTabletOrMobile &&
+                <SearchWrapper>
+                    <SearchBar />
+                </SearchWrapper>
             }
 
         </HeaderContainer>
@@ -74,7 +73,7 @@ function SiteHeaderBar() {
 
 }
 
-function SiteHeader({topics}) {
+function SiteHeader({ topics }) {
 
     const screenSize = useScreenSize();
 
@@ -84,7 +83,7 @@ function SiteHeader({topics}) {
 
             {/* Story Tags - should hide at mobile sizes */}
             {
-                !screenSize.isTabletOrMobile && <StoryTopicNavBar topics={topics}/>
+                !screenSize.isTabletOrMobile && <StoryTopicNavBar topics={topics} />
             }
         </>
     )
