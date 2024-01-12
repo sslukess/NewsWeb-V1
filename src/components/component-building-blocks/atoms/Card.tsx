@@ -90,7 +90,7 @@ function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy, date, author, onCl
     <Suspense fallback={<Spinner />}>
       <CardWrapper>
 
-      {!screenSize.isTabletOrMobile &&
+        {!screenSize.isTabletOrMobile &&
           <ImageWrapper>
             <StyledImg src={resizedImgSrc} alt='story picture' fill={true} />
           </ImageWrapper>
@@ -101,19 +101,11 @@ function BasicCard({ imgSrc, cardTitle, cardCopy, buttonCopy, date, author, onCl
           <p>{date} - {author}</p>
           {cardCopy}
 
-          {!screenSize.isTinyMobile &&
-            <ButtonWrapper>
-              <Button variant="outline-success" onClick={onClick} href={link}>{buttonCopy}</Button>
-            </ButtonWrapper>
-          }
+          <ButtonWrapper>
+            <Button variant="dark" onClick={onClick} href={link}>{buttonCopy}</Button>
+          </ButtonWrapper>
 
         </TextWrapper>
-
-
-
-        
-
-
       </CardWrapper>
     </Suspense>
   );
