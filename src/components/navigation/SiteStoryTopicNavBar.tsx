@@ -4,6 +4,8 @@ import styled, { keyframes } from 'styled-components';
 import theme from '../../styling/CSS/theme/theme';
 import { Container } from 'react-bootstrap';
 import convertTopicsToLinks from '../../utils/story-utils/ConvertTopicsToLinks';
+import { SearchBar } from '@/components/component-building-blocks/ComponentBuildingBlockIndex';
+import useScreenSize from '../../utils/custom-hooks/useScreenSize';
 
 // Nav styles
 const TopicNavBarContainer = styled(Container)`
@@ -29,8 +31,15 @@ const TopicNavBarStoryTag = styled.div`
         animation: ${wiggle} 0.3s;
         animation-fill-mode: forwards;
         color: ${theme.text.colors.linkHover} !important;
-    }
-    
+    }  
+`;
+
+// Header element 
+const SearchWrapper = styled.div`
+    padding: 10px;
+    flex: 0 0 7em;
+    display: flex;
+    justify-content: end;
 `;
 
 export function BasicStoryTopicTags({ tags }) {
@@ -58,9 +67,17 @@ function StoryTopicNavBar({ topics }) {
 
     const tagsJustLinks = tagLinks.map((tag) => tag.link);
 
+    const screenSize = useScreenSize();
+
     return (
         <TopicNavBarContainer fluid>
             <BasicStoryTopicTags tags={tagsJustLinks} />
+
+                <SearchWrapper>
+                    <SearchBar />
+                </SearchWrapper>
+
+
         </TopicNavBarContainer>
     )
 }
