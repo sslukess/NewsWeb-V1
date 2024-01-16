@@ -103,3 +103,6 @@ bower_components
 psd
 thumb
 sketch
+
+# netlify 
+.netlify
