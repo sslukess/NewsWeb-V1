@@ -7,16 +7,14 @@ import Link from 'next/link'
 import theme from '@/styling/CSS/CSS-renders/theme/theme';
 
 const StyledLink = styled(Link)`
-    color: ${(props) => props.tint = "dark" ? theme.text.colors.dark : theme.text.colors.linkColor};
+    color: ${(props) => props.tint === "dark" ? theme.text.colors.dark : theme.text.colors.linkColor};
     text-decoration: none;
     &:hover {
-        color: ${(props) => props.tint = "dark" ? theme.text.colors.dark : theme.text.colors.linkHover};
+        color: ${(props) => props.tint === "dark" ? theme.text.colors.dark : theme.text.colors.linkHover};
     }
 `;
 
-
-
-const convertTopicsToLinks = (topics: string[], tint: 'light' | 'dark') => {
+const convertTopicsToLinks = (topics: string[], tint: 'light' | 'dark' = "light") => {
     return topics.map((topic) => {
         return {
             displayLabel: topic,
