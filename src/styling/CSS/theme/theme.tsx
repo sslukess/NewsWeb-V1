@@ -1,23 +1,23 @@
 const theme = {
     colors: {
-        primary: 'floralwhite',
-        secondary: 'lightcoral',
+        primary: '#1E1C21',
+        secondary: '#004643',
         grey: '#eaeaea',
     },
     text: {
         colors: {
-            primary: '#212529',
-            light: '#f3f3f3',
-            logo: 'lightcoral',
-            linkColor: '#212529',
-            linkHover: 'lightcoral',
+            primary: '#FFF',
+            light: '#1FFFF0',
+            logo: '#1FFFF0',
+            linkColor: '#FFF',
+            linkHover: '#AAA',
         },
         family: {
-            primary: "none",
-            logo: "'Lemon', serif"
+            primary: "Overpass",
+            serifSetting: "san-serif",
+            logo: "Lemon"
         }
     }
 };
-// ffbd59  5e17eb
 
 export default theme;

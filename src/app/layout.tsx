@@ -3,9 +3,10 @@ import StyledComponentsRegistry from '../styling/styled-components/registry'
 
 //CSS Imports
 // import '@/styling/CSS/reset.css';
+import ThemeSheet from '@/styling/CSS/theme/ThemeMasterSheet';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@/styling/CSS/burger-menu.css';
-import '@/styling/CSS/global.css';
+// import '@/styling/CSS/global.css';
 
 
 // importing components
@@ -29,6 +30,9 @@ const RootLayout = async ({ children }) => {
             <html>
                 <head>
                     <title>{siteName}</title>
+
+                    {/* Global Theme Sheet */}
+                    <ThemeSheet />
 
                     {/* Google Font Imports */}
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
