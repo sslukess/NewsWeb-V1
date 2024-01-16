@@ -26,7 +26,7 @@ const LowerLogoWord = styled.p`
 const LogoFlexBox = styled.div`
     display: flex;
     flex-direction: column; 
-    font-family: ${theme.text.family.logo};
+    font-family: ${theme.text.family.logo}, ${theme.text.family.logoSerifSetting};
     color: ${theme.text.colors.logo};
 `
 

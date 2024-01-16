@@ -6,7 +6,7 @@ import getMastheadName from '@/utils/app-utils/getMastheadName';
 const StyledFooter = styled.footer`
     border-radius: 0 0 3px 3px;
     background-color: ${theme.colors.secondary};
-    color: ${theme.text.colors.light};
+    color: ${theme.text.colors.footer};
     padding: 10px;
     width: 100%;
     display: flex;

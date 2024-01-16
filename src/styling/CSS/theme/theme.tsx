@@ -1,21 +1,23 @@
 const theme = {
     colors: {
         primary: '#1E1C21',
-        secondary: '#004643',
-        grey: '#eaeaea',
+        secondary: '#10D1AD',
+        appBackground: 'slategray',
     },
     text: {
         colors: {
-            primary: '#FFF',
+            primary: '#e7e7e7',
             light: '#1FFFF0',
-            logo: '#1FFFF0',
-            linkColor: '#FFF',
-            linkHover: '#AAA',
+            logo: '#10D1AD',
+            footer: '#1E1C21',
+            linkColor: '#e7e7e7',
+            linkHover: '#10D1AD',
         },
         family: {
             primary: "Overpass",
             serifSetting: "san-serif",
-            logo: "Lemon"
+            logo: "Major Mono Display",
+            logoSerifSetting: "mono-space"
         }
     }
 };
