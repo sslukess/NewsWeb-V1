@@ -2,7 +2,7 @@
 
 import styled from 'styled-components';
 import { breakpoint, breakpointSizes } from '../../../styling/style-mix-ins/CssBreakpoints';
-import theme from '@/styling/CSS/theme/theme';
+import theme from '@/styling/CSS/CSS-renders/theme/theme';
 
 // Types
 import type { NormalisedStory } from "../../../types/index.d";

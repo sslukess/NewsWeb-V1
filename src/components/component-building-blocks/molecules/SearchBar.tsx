@@ -2,7 +2,7 @@
 
 import styled from 'styled-components';
 
-import theme from '@/styling/CSS/theme/theme'
+import theme from '@/styling/CSS/CSS-renders/theme/theme'
 
 // sending the form submission to this page with the included query parameters.
 // The page itself will interpret the term, data fetch and then display results. 

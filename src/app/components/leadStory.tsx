@@ -10,7 +10,7 @@ import Image from 'next/image'
 import { StyledLink } from '../../components/component-building-blocks/ComponentBuildingBlockIndex'
 import { useRouter } from 'next/navigation'; 
 import { getPhotoWithSize } from '@/utils/story-utils/GetPhotoWithSize';
-import theme from '@/styling/CSS/theme/theme'
+import theme from '@/styling/CSS/CSS-renders/theme/theme'
 
 import mapRawResponseToStoryObject from '../../graphql/data-mapping/StoryDataMapping';
 import { NormalisedStory } from '../../types/index.d';

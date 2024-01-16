@@ -4,7 +4,6 @@
 import { Suspense } from 'react';
 import Button from 'react-bootstrap/Button';
 import styled from 'styled-components';
-import { Col, Row, Container } from 'react-bootstrap';
 import { breakpoint, breakpointSizes } from '../../../styling/style-mix-ins/CssBreakpoints';
 import StyledLink from './StyledLink';
 import { Spinner } from "@/components/component-building-blocks/atoms/Spinner"

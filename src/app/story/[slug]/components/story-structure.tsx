@@ -1,7 +1,6 @@
 'use client';
 
 import { Suspense } from 'react';
-import { Spinner } from '@/components/component-building-blocks/atoms/Spinner';
 import styled from 'styled-components'
 import { Col, Row, Container } from "react-bootstrap";
 import Image from 'next/image';

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import theme from "@/styling/CSS/theme/theme"
+import theme from "@/styling/CSS/CSS-renders/theme/theme"
 import { breakpoint, breakpointSizes } from "@/styling/style-mix-ins/CssBreakpoints"
 
 
@@ -26,7 +26,7 @@ const LowerLogoWord = styled.p`
 const LogoFlexBox = styled.div`
     display: flex;
     flex-direction: column; 
-    font-family: ${theme.text.family.logo};
+    font-family: ${theme.text.family.logo}, ${theme.text.family.logoSerifSetting};
     color: ${theme.text.colors.logo};
 `
 

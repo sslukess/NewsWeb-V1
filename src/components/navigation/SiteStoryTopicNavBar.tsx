@@ -1,7 +1,7 @@
 'use client'
 
 import styled, { keyframes } from 'styled-components';
-import theme from '../../styling/CSS/theme/theme';
+import theme from '@/styling/CSS/CSS-renders/theme/theme';
 import { Container } from 'react-bootstrap';
 import convertTopicsToLinks from '../../utils/story-utils/ConvertTopicsToLinks';
 import { SearchBar } from '@/components/component-building-blocks/ComponentBuildingBlockIndex';
@@ -60,10 +60,10 @@ export function BasicStoryTopicTags({ tags }) {
 function StoryTopicNavBar({ topics }) {
 
     // just in static tag
-    const justInTag = convertTopicsToLinks(['Just In']);
+    const justInTag = convertTopicsToLinks(['Just In'], "light");
 
     // concatenate the links from the tags (these come from contentful)
-    const tagLinks = justInTag.concat(convertTopicsToLinks(topics));
+    const tagLinks = justInTag.concat(convertTopicsToLinks(topics, "light"));
 
     const tagsJustLinks = tagLinks.map((tag) => tag.link);
 
@@ -76,7 +76,6 @@ function StoryTopicNavBar({ topics }) {
                 <SearchWrapper>
                     <SearchBar />
                 </SearchWrapper>
-
 
         </TopicNavBarContainer>
     )

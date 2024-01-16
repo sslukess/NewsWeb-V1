@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components';
-import theme from '../../styling/CSS/theme/theme';
+import theme from '@/styling/CSS/CSS-renders/theme/theme';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
