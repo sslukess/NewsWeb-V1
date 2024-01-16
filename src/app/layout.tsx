@@ -4,8 +4,8 @@ import StyledComponentsRegistry from '../styling/styled-components/registry'
 //CSS Imports
 import ThemeSheet from '@/styling/CSS/CSS-renders/theme/ThemeMasterSheet';
 import GoogleFontImports from '@/styling/CSS/CSS-renders/GoogleFonts';
+import BurgerMenuSheet from '@/styling/CSS/CSS-renders/BurgerMenu';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '@/styling/CSS/burger-menu.css';
 
 // importing components
 import { SiteFooter, SiteHeader, SiteBurgerMenu } from '../components/index'
@@ -33,6 +33,9 @@ const RootLayout = async ({ children }) => {
 
                     {/* Global Theme Sheet */}
                     <ThemeSheet />
+
+                    {/* Burger Menu Sheet */}
+                    <BurgerMenuSheet />
 
                 </head>
                 <body>

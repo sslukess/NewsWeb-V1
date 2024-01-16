@@ -35,10 +35,10 @@ const HamburgerMenuWithItems = ({topics}) => {
     const screenSize = useSizeSize();
 
         // just in static tag
-    const justInTag = convertTopicsToLinks(['Just In']);
+    const justInTag = convertTopicsToLinks(['Just In'], "dark");
 
     // concatenate the links from the tags (these come from contentful)
-    const tagLinks = justInTag.concat(convertTopicsToLinks(topics));
+    const tagLinks = justInTag.concat(convertTopicsToLinks(topics, "dark"));
 
         const tagsJustLinks = tagLinks.map((tag) => tag.link);
 

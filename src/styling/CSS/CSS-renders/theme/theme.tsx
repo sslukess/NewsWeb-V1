@@ -8,6 +8,7 @@ const theme = {
         colors: {
             primary: '#e7e7e7',
             light: '#1FFFF0',
+            dark: '#1E1C21',
             logo: '#10D1AD',
             footer: '#1E1C21',
             linkColor: '#e7e7e7',
