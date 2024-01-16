@@ -2,8 +2,8 @@
 import StyledComponentsRegistry from '../styling/styled-components/registry'
 
 //CSS Imports
-import ThemeSheet from '@/styling/CSS/theme/ThemeMasterSheet';
-import GoogleFontImports from '@/styling/CSS/GoogleFonts';
+import ThemeSheet from '@/styling/CSS/CSS-renders/theme/ThemeMasterSheet';
+import GoogleFontImports from '@/styling/CSS/CSS-renders/GoogleFonts';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@/styling/CSS/burger-menu.css';
 

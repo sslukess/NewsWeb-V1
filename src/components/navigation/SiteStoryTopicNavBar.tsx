@@ -1,7 +1,7 @@
 'use client'
 
 import styled, { keyframes } from 'styled-components';
-import theme from '../../styling/CSS/theme/theme';
+import theme from '@/styling/CSS/CSS-renders/theme/theme';
 import { Container } from 'react-bootstrap';
 import convertTopicsToLinks from '../../utils/story-utils/ConvertTopicsToLinks';
 import { SearchBar } from '@/components/component-building-blocks/ComponentBuildingBlockIndex';

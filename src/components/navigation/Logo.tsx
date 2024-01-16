@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import theme from "@/styling/CSS/theme/theme"
+import theme from "@/styling/CSS/CSS-renders/theme/theme"
 import { breakpoint, breakpointSizes } from "@/styling/style-mix-ins/CssBreakpoints"
 
 

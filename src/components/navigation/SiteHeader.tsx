@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 import styled, { keyframes } from 'styled-components';
 import useScreenSize from '../../utils/custom-hooks/useScreenSize';
 import StoryTopicNavBar from './SiteStoryTopicNavBar';
-import theme from '../../styling/CSS/theme/theme';
+import theme from '@/styling/CSS/CSS-renders/theme/theme';
 import { useRouter } from 'next/navigation'
 import getMastheadName from '@/utils/app-utils/getMastheadName';
 import Logo from './Logo';

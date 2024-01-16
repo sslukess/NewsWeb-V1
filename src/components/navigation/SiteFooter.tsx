@@ -1,6 +1,6 @@
 'use client'
 import styled from 'styled-components';
-import theme from '../../styling/CSS/theme/theme';
+import theme from '@/styling/CSS/CSS-renders/theme/theme';
 import getMastheadName from '@/utils/app-utils/getMastheadName';
 
 const StyledFooter = styled.footer`

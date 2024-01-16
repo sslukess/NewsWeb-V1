@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Link from 'next/link'
 
 // import theme
-import theme from '../../styling/CSS/theme/theme';
+import theme from '@/styling/CSS/CSS-renders/theme/theme';
 
 const StyledLink = styled(Link)`
     color: ${theme.text.colors.primary};

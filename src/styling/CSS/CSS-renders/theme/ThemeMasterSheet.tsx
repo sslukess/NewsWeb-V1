@@ -1,6 +1,5 @@
 import theme from './theme';
 
-
 const ThemeSheet = () => {
 
     const cssToInsert = `

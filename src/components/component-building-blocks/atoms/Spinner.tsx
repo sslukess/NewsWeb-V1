@@ -1,5 +1,5 @@
 'use client';
-import theme from '@/styling/CSS/theme/theme'
+import theme from '@/styling/CSS/CSS-renders/theme/theme'
 
 import styled from 'styled-components';
 
