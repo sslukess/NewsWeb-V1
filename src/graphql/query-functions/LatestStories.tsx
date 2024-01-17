@@ -8,7 +8,7 @@ async function retrieveSomeNumberOfStories(n: number) {
     const LATEST_STORIES_QUERY = gql`
         ${FRAGMENT_STORY_CONTENT}    
         query LatestStories {
-            storyCollection(limit: ${n}) {
+            storyCollection(limit: ${n}, order: storyDate_DESC) {
                 items {
                     ...StoryElements
                 }
