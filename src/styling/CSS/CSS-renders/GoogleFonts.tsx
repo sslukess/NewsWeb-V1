@@ -15,6 +15,7 @@ const GoogleFontImports = (props) => {
             <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet"></link>
             <link href="https://fonts.googleapis.com/css2?family=Monofett&display=swap" rel="stylesheet"></link>
             <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet"></link>
+            <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet"></link>
         </>
     )
 };

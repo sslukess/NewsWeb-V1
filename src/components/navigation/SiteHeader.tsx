@@ -20,13 +20,13 @@ const wiggle = keyframes`
 `
 
 const HeaderContainer = styled(Container)`
-    background-color: ${theme.colors.primary};
+    background-color: ${theme.colors.header};
     color: ${theme.text.colors.primary};
     display: flex;
     justify-content: ${(props) => props.leftAlign ? "start" : "center"};
     align-items: start;
     padding: 0;
-    border-bottom: 1px solid ${theme.colors.secondary};
+    border-bottom: 3px solid ${theme.colors.secondary};
     border-radius: 3px 3px 0 0;
 `;
 

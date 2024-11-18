@@ -9,6 +9,7 @@ import useScreenSize from '../../utils/custom-hooks/useScreenSize';
 
 // Nav styles
 const TopicNavBarContainer = styled(Container)`
+    background-color: ${theme.colors.header};
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -73,9 +74,9 @@ function StoryTopicNavBar({ topics }) {
         <TopicNavBarContainer fluid>
             <BasicStoryTopicTags tags={tagsJustLinks} />
 
-                <SearchWrapper>
-                    <SearchBar />
-                </SearchWrapper>
+            <SearchWrapper>
+                <SearchBar />
+            </SearchWrapper>
 
         </TopicNavBarContainer>
     )
