@@ -107,7 +107,7 @@ const mapRawResponseToStoryObject = (data: any) => {
 
     // Date 
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    normalisedStory.storyDate = new Date(storyDate).toLocaleDateString('en-AU', options as any);
+    normalisedStory.storyDate = new Date(storyDate).toLocaleDateString('en-AU', options as any).replace(",", "");
 
     return normalisedStory;
 }
