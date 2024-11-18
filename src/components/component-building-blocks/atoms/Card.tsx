@@ -9,9 +9,11 @@ import StyledLink from './StyledLink';
 import { Spinner } from "@/components/component-building-blocks/atoms/Spinner"
 import Image from 'next/image'
 
+// Style
+import theme from '@/styling/CSS/CSS-renders/theme/theme'
+
 // Hooks
 import useScreenSize from '../../../utils/custom-hooks/useScreenSize';
-
 import { getPhotoWithSize } from '../../../utils/story-utils/GetPhotoWithSize';
 
 // === Interfaces ===
@@ -69,7 +71,7 @@ const ButtonWrapper = styled.div`
 const CardWrapper = styled.div`
   padding: 12px;
   display: flex;
-  border-top: 0.4px solid black;
+  border-top: 0.4px solid ${theme.colors.secondary};
   margin: 10px auto;
   height: auto;
   // flex: 0 0 auto;
